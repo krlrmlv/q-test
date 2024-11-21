@@ -1,0 +1,144 @@
+$nav-border: $border-width solid $gray-400;
+
+.nav-tabs {
+  border-bottom: $nav-border;
+  flex: 1 1 auto;
+  background-color: $white;
+  column-gap: 4.5rem;
+
+  .nav-item {
+    flex: 0 0 auto;
+    padding-inline: 0;
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding-inline: 0;
+    color: $gray-600;
+    transition: $transition-base;
+    transition-property: color;
+    overflow: visible;
+    border: none;
+
+    &:hover {
+      color: $gray-900;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background-color: $primary;
+      transition: $transition-tabs;
+    }
+
+    &.active {
+      cursor: default;
+      color: $primary;
+      overflow: hidden;
+      z-index: 1;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &.disabled {
+      background-color: $gray-300;
+    }
+
+    .icon {
+      flex: 0 0 auto;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.nav-calculators,
+.nav-calculators-mobile {
+  border: none;
+  flex: 1 0 0;
+  background-color: transparent;
+}
+
+.nav-calculators {
+  column-gap: 0;
+
+  .nav-item {
+    flex: 1 0 auto;
+  }
+}
+
+/* Underline variant */
+
+.nav-underline {
+  gap: $nav-link-padding-x * 2;
+  border-bottom: $nav-border;
+
+  .nav-link {
+    position: relative;
+    margin-bottom: -$border-width;
+    padding: 0 0 calc(#{$nav-link-padding-y} - #{$border-width * 2});
+    border: none;
+    color: $gray-600;
+    transition: $transition-base;
+    transition-property: color, border-color;
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 50%;
+      translate: -50%;
+      width: 0;
+      height: 3px;
+      background-color: $primary;
+      transition: $transition-tabs;
+    }
+
+    &:hover {
+      color: $primary;
+    }
+
+    &.active {
+      color: $primary;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Scroll tab buttons horizontally */
+.nav-tabs-scrollable {
+  display: flex;
+  margin-left: -$border-width;
+  padding-left: $border-width;
+  overflow: scroll;
+  overflow-y: hidden;
+
+  /* hide scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-tabs {
+    flex-wrap: nowrap;
+  }
+
+  .nav-link {
+    white-space: nowrap;
+    cursor: pointer;
+  }
+}

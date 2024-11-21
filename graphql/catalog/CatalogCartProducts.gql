@@ -1,0 +1,6 @@
+query CatalogCartProducts($cartId: String = "") {
+  cartProducts: ekfgroup_cart(where: { cart_id: {_eq: $cartId}}) {
+    product_id
+    quantity
+  }
+}

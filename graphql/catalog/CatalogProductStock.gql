@@ -1,0 +1,40 @@
+query CatalogProductStock(
+  $locale: String!
+  $vendor_code: String!
+  $filterDate: timestamp!
+) {
+  stock: ekfgroup_catalog_products(
+    where: {
+      language: { code: { _eq: $locale } }
+      vendor_code: { _eq: $vendor_code }
+    }
+  ) {
+    stocks(
+      order_by: { warehouse: { name: asc } }
+      where: {
+        warehouse: { advertisement: { _eq: false } }
+        warehouse_id: { _neq: "4a654c3f-94d7-11e8-a203-00155d347c07" } # filter Kazakhstan warehouse
+        _or: [
+          { quantity: { _gt: "0" } }
+          { receipts: { date: { _gt: $filterDate } } }
+        ]
+      }
+    ) {
+      quantity
+      warehouse {
+        id
+        name
+        type
+        country
+      }
+      receipts(
+        where: { date: { _gte: $filterDate } }
+        order_by: { date: asc }
+        limit: 3
+      ) {
+        quantity_free
+        date
+      }
+    }
+  }
+}

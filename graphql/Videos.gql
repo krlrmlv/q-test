@@ -1,0 +1,19 @@
+#import "@/graphql/fragments/VideoFragment"
+query Videos(
+  $limit: Int
+  $locale: String!
+  $offset: Int = 0
+  $playlistId: bigint!
+) {
+  videos: ekfgroup_catalog_videos(
+    limit: $limit
+    offset: $offset
+    order_by: [{ sort_order: asc }, { id: desc }]
+    where: {
+      language: { code: { _eq: $locale } }
+      playlist_id: { _eq: $playlistId }
+    }
+  ) {
+    ...VideoFragment
+  }
+}

@@ -1,0 +1,5 @@
+mutation CartClear($cartId: String!) {
+  ekfgroup_cart_clear_cart(cart_id: $cartId) {
+    ok
+  }
+}

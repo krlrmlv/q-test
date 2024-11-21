@@ -1,0 +1,47 @@
+#import "@/graphql/fragments/CatalogProductFragment"
+#import "@/graphql/fragments/SolutionsFormFragment"
+#import "@/graphql/fragments/SolutionsSolutionFragment"
+#import "@/graphql/fragments/SolutionsSolutionModificationFragment"
+query SolutionsSolution($cartId: String, $locale: String, $slug: String) {
+  solutions: ekfgroup_catalog_solutions_solutions(
+    limit: 1
+    where: { language: { code: { _eq: $locale } }, slug: { _eq: $slug } }
+  ) {
+    ...SolutionsSolutionFragment
+
+    products(where: { product: {} }) {
+      product {
+        ...CatalogProductFragment
+      }
+
+      quantity
+    }
+
+    modifications(
+      limit: 8
+      order_by: [
+        { modification: { sort_order: asc } }
+        { modification: { name: asc } }
+      ]
+      where: { modification: {} }
+    ) {
+      modification {
+        ...SolutionsSolutionModificationFragment
+      }
+    }
+
+    modifications_aggregate(where: { modification: {} }) {
+      aggregate {
+        count
+      }
+    }
+  }
+
+  forms: ekfgroup_catalog_solutions_forms(
+    limit: 1
+    offset: 2
+    order_by: [{ id: asc }]
+  ) {
+    ...SolutionsFormFragment
+  }
+}

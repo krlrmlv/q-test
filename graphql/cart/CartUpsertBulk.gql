@@ -1,0 +1,8 @@
+mutation CartUpsertBulk(
+  $cartId: String!
+  $products: [EkfgroupCartUpsertProductsProductInput]!
+) {
+  ekfgroup_cart_upsert_products(cart_id: $cartId, products: $products) {
+    ok
+  }
+}

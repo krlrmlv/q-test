@@ -1,0 +1,12 @@
+fragment NewsArticleFragment on ekfgroup_catalog_articles {
+  created_at
+  id
+  meta_description
+  meta_keywords
+  preview_image
+  published_at
+  short_text
+  slug
+  text
+  title
+}

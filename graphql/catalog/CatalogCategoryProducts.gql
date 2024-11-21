@@ -1,0 +1,32 @@
+#import "@/graphql/fragments/CatalogCategoryProductsFragment"
+query CatalogCategoryProducts(
+  $locale: String
+  $slug: String
+  $limit: Int
+  $offset: Int
+  $sortBy: [ekfgroup_catalog_category_product_order_by!]
+  $where: ekfgroup_catalog_category_product_bool_exp = {}
+) {
+  categories: ekfgroup_catalog_categories(
+    where: {
+      active: { _eq: true }
+      language: { code: { _eq: $locale } }
+      slug: { _eq: $slug }
+    }
+  ) {
+    ...CatalogCategoryProductsFragment
+
+    productsTotal: products_aggregate(
+      where: {
+        _and: [
+          $where
+          { product: { price: { _gt: 0 }, active: { _eq: true } } }
+        ]
+      }
+    ) {
+      aggregate {
+        count
+      }
+    }
+  }
+}

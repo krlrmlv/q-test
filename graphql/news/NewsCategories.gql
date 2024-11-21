@@ -1,0 +1,28 @@
+#import "@/graphql/fragments/NewsArticleFragment"
+query NewsCategories(
+  $articleLimit: Int = 4
+  $limit: Int
+  $locale: String!
+  $type: String!
+  $where: ekfgroup_catalog_articles_bool_exp = {}
+) {
+  categories: ekfgroup_catalog_article_categories(
+    limit: $limit
+    order_by: { id: asc }
+    where: {
+      language: { code: { _eq: $locale } }
+      parent: { slug: { _eq: $type } }
+    }
+  ) {
+    name
+    slug
+
+    articles(
+      limit: $articleLimit
+      order_by: { published_at: desc }
+      where: $where
+    ) {
+      ...NewsArticleFragment
+    }
+  }
+}

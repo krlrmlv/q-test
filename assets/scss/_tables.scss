@@ -1,0 +1,76 @@
+@import '~bootstrap/scss/tables';
+
+.table {
+  thead th {
+    line-height: $headings-line-height;
+  }
+
+  th,
+  td {
+    padding: $table-cell-padding-y $table-cell-padding-x;
+  }
+
+  .cell-form-control {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    .form-control {
+      border-color: transparent;
+    }
+  }
+
+  &.table-sm {
+    th,
+    td {
+      padding: $table-cell-padding-y-sm $table-cell-padding-x-sm;
+    }
+
+    .cell-form-control {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  &.table-borderless:not(.table-stock) {
+    thead tr:last-of-type {
+      border-bottom: $border-width solid $secondary;
+    }
+  }
+}
+
+.table.table-stock {
+  thead tr:last-of-type th {
+    font-family: $font-family-sans-serif;
+    padding-inline: 1.5rem;
+    padding-block: 1rem;
+    font-weight: $font-weight-normal;
+    background-color: $gray-100;
+    color: $gray-600;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-2;
+  }
+
+  tbody tr td {
+    padding: 1.5rem;
+  }
+}
+
+.table-striped {
+  &.table-striped-odd {
+    tbody {
+      tr {
+        &:nth-of-type(2n) {
+          background-color: inherit;
+        }
+
+        &:nth-of-type(2n + 1) {
+          background-color: $gray-100;
+        }
+      }
+    }
+  }
+}
+
+.table-row-last {
+  border-bottom: $border-width solid $secondary;
+}

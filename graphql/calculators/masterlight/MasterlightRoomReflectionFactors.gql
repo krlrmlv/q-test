@@ -1,0 +1,11 @@
+query MasterlightRoomReflectionFactors($locale: String!) {
+  room_reflection_factors: ekfgroup_masterlight_room_reflection_factors(where: { language: { code: { _eq: $locale } } }) {
+    id
+    ceil
+    ceil_reflection_factor
+    walls
+    walls_reflection_factor
+    floor
+    floor_reflection_factor
+  }
+}

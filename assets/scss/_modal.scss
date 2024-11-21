@@ -1,0 +1,69 @@
+@import '~bootstrap/scss/modal';
+
+.modal {
+  padding-left: 0 !important;
+
+  .modal-body {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  &.modal-media {
+    .modal-body {
+      padding: 0;
+    }
+  }
+
+  &.modal-compact {
+    .modal-body {
+      padding: 1rem;
+    }
+  }
+}
+
+.modal.modal-product-stock {
+  header {
+    .title {
+      font-size: $font-size-7;
+    }
+
+    .vendor-code {
+      font-size: $font-size-4;
+      color: $gray-600;
+      font-weight: $font-weight-medium;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .modal.modal-product-stock {
+    .modal-body {
+      padding-top: 3.5rem;
+      padding-bottom: 2.5rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .modal {
+    .modal-body {
+      padding: 4rem;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .modal-xxl {
+    max-width: calc(
+      #{map-get($container-max-widths, 'xl')} - #{$grid-gutter-width}
+    );
+  }
+}
+
+.modal-close {
+  position: absolute;
+  right: 1rem - $input-btn-padding-y-sm;
+  top: 1rem - $input-btn-padding-y-sm;
+  border: none;
+  z-index: 1;
+}

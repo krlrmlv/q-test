@@ -1,0 +1,49 @@
+#import "@/graphql/fragments/SearchProductFragment"
+query CatalogAnalogsSearch(
+  $cartId: String
+  $limit: Int!
+  $offset: Int!
+  $q: String!
+  $sortBy: [ekfgroup_catalog_products_order_by!]
+  $where: ekfgroup_catalog_products_bool_exp
+) {
+  analogs: ekfgroup_catalog_search_analog(
+    args: { qq: $q }
+    where: $where
+    limit: $limit
+    offset: $offset
+    order_by: $sortBy
+  ) {
+    ...SearchProductFragment
+
+    stocks_aggregate {
+      aggregate {
+        sum {
+          quantity
+        }
+      }
+    }
+  }
+  analogsTotalRows: ekfgroup_catalog_search_analog_aggregate(
+    args: { qq: $q }
+    where: $where
+  ) {
+    aggregate {
+      count
+      max {
+        price
+      }
+      min {
+        price
+      }
+    }
+    nodes {
+      categories {
+        category {
+          id
+          name
+        }
+      }
+    }
+  }
+}

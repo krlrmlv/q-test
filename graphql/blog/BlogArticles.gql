@@ -1,0 +1,65 @@
+#import "@/graphql/fragments/BlogArticleFragment"
+query BlogArticles(
+  $limit: Int = 9
+  $locale: String!
+  $offset: Int = 0
+  $where: ekfgroup_catalog_articles_bool_exp = {}
+) {
+  articles: ekfgroup_catalog_articles(
+    limit: $limit
+    offset: $offset
+    order_by: { published_at: desc }
+    where: {
+      _and: [
+        $where
+        {
+          category: { slug: { _eq: "blog" } }
+          language: { code: { _eq: $locale } }
+        }
+      ]
+    }
+  ) {
+    ...BlogArticleFragment
+  }
+
+  tags: ekfgroup_catalog_article_tags(
+    order_by: { articles_aggregate: { count: desc } }
+    where: { language: { code: { _eq: $locale } } }
+  ) {
+    id
+    name
+    slug
+    totalArticles: articles_aggregate {
+      aggregate {
+        count
+      }
+    }
+  }
+
+  totalArticles: ekfgroup_catalog_articles_aggregate(
+    where: {
+      category: { slug: { _eq: "blog" } }
+      language: { code: { _eq: $locale } }
+    }
+  ) {
+    aggregate {
+      count
+    }
+  }
+
+  totalRows: ekfgroup_catalog_articles_aggregate(
+    where: {
+      _and: [
+        $where
+        {
+          category: { slug: { _eq: "blog" } }
+          language: { code: { _eq: $locale } }
+        }
+      ]
+    }
+  ) {
+    aggregate {
+      count
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.ymap-body {
+  [class*='-balloon__content'] {
+    padding: 0;
+    line-height: $line-height-base;
+  }
+
+  .ymaps-balloon-custom {
+    position: relative;
+    padding: 1rem;
+
+    .btn-close {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      width: calc(0.5rem + 16px);
+      height: calc(0.5rem + 16px);
+      border-radius: $rounded-pill;
+
+      &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        left: calc(50% - 8px);
+        top: calc(50% - 8px);
+        width: 16px;
+        height: 16px;
+        background-image: url('~/assets/images/icons/close-16.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        opacity: 0.75;
+      }
+    }
+  }
+}

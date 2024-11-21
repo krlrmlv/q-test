@@ -1,0 +1,76 @@
+/* Fonts */
+
+// All fonts are loaded & cached locally with @nuxtjs/google-fonts module
+
+/* Custom variables */
+
+@import 'variables';
+
+/* Bootstrap base */
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/images';
+
+/* Bootstrap customization */
+
+@import 'alert';
+@import 'grid';
+@import 'type';
+@import 'badge';
+@import 'breadcrumbs';
+@import 'buttons';
+@import 'button-group';
+@import 'card';
+@import 'collapse';
+@import 'dropdown';
+@import 'forms';
+@import 'input-group';
+@import 'media';
+@import 'modal';
+@import 'nav';
+@import 'pagination';
+@import 'progress';
+@import 'simplebar';
+@import 'slider';
+@import 'spinners';
+@import 'tables';
+@import 'tabs';
+@import 'toasts';
+@import 'tooltip';
+
+/* Custom styles */
+
+@import 'svg';
+@import 'utilities';
+@import 'transitions';
+@import 'ymap';
+
+@import 'about';
+@import 'catalog';
+@import 'home';
+@import 'solutions';
+
+/* Bootstrap-Vue */
+
+@import '~bootstrap-vue/src/index.scss';
+
+@import 'skeleton';
+
+.body-fixed {
+  body {
+    height: 100%;
+    overflow-y: hidden;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .body-fixed {
+    overscroll-behavior: none;
+    height: 100%;
+    overflow-y: hidden;
+  }
+}

@@ -1,0 +1,10 @@
+fragment MasterkupolProductFragment on ekfgroup_catalog_products {
+  id
+  image
+  name
+  slug
+  unit_storage {
+    name
+  }
+  vendor_code
+}

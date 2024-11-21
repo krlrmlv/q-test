@@ -1,0 +1,87 @@
+stages:
+  - build
+  - deploy
+
+.build:
+  stage: build
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [""]
+  before_script:
+    - echo "Generating .env file..."
+    - |
+      cat <<EOF > .env
+      NODE_ENV=production
+      API_LOCATION=${API_LOCATION}
+      REST_API_URL=${REST_API_URL}
+      YOUTUBE_API_KEY=${YOUTUBE_API_KEY}
+      SITE_URL=${SITE_URL}
+      MARKET_SITE_URL=${MARKET_SITE_URL}
+      EMBED_URL=${EMBED_URL}
+      GTM_ID=${GTM_ID}
+      RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}
+      TMR_ID=${TMR_ID}
+      GTAG_ID=${GTAG_ID}
+      TESTOGRAF_ID=${TESTOGRAF_ID}
+      YANDEX_METRIKA_ID=${YANDEX_METRIKA_ID}
+      IPINFO_TOKEN=${IPINFO_TOKEN}
+      CDN_URL=${CDN_URL}
+      GA4_ID=${GA4_ID}
+      TMR_ID=${TMR_ID}
+      SENTRY_DNS=${SENTRY_DNS}
+      YANDEX_VERIFICATION=${YANDEX_VERIFICATION}
+      EOF
+  script:
+    - echo "Container Build Job"
+    - echo "Building and shipping image"
+    - mkdir -p /kaniko/.docker && mkdir dist
+    - echo "{\"auths\":{\"${CI_REGISTRY}\":{\"auth\":\"$(echo -n "json_key:${CI_REGISTRY_KEY}" | base64 | tr -d '\n' )\"}}}" > /kaniko/.docker/config.json
+    - >-
+      /kaniko/executor
+      --cache=true
+      --use-new-run
+      --snapshot-mode=redo 
+      --context "${CI_PROJECT_DIR}"
+      --dockerfile "${CI_PROJECT_DIR}/Dockerfile"
+      --destination "${CI_REGISTRY}/${CI_PROJECT_NAME}:${CI_COMMIT_SHORT_SHA}"
+      --destination "${CI_REGISTRY}/${CI_PROJECT_NAME}:latest"
+    - cp -rf /app/.nuxt/dist/client/* dist
+
+build production:
+  extends: .build
+  environment:
+    name: production
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+  artifacts:
+    paths:
+      - dist/
+    expire_in: 1 hour
+    untracked: true
+  tags:
+    - yandex
+
+deploy to cdn:
+  stage: deploy
+  image: python:alpine3.20
+  script:
+    - pip install awscli
+    - aws s3 sync dist/ s3://$S3_BUCKET_NAME/ --endpoint-url=$S3_ENDPOINT_URL --delete
+  environment:
+    name: production
+  variables:
+    S3_ENDPOINT_URL: "https://storage.yandexcloud.net"
+    S3_BUCKET_NAME: "cdn-ekfgroup"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+  tags:
+    - yandex
+
+build testing:
+  extends: .build
+  environment:
+    name: testing
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "test"'
+  tags:
+    - yandex-testing

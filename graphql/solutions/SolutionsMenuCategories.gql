@@ -1,0 +1,8 @@
+query SolutionsMenuCategories($locale: String) {
+  categories: ekfgroup_catalog_solutions_categories(
+    where: { language: { code: { _eq: $locale } } }
+  ) {
+    name
+    slug
+  }
+}

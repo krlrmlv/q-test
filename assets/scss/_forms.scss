@@ -1,0 +1,268 @@
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/custom-forms';
+
+$custom-control-line-height: math.div($font-size-base, $font-size-2) *
+  $line-height-base;
+
+.col-form-label {
+  font-weight: $font-weight-medium;
+}
+
+.form-control {
+  &:focus {
+    &::placeholder {
+      text-shadow: none; // Firefox fix
+    }
+  }
+}
+
+.form-control:invalid,
+.form-control.is-invalid,
+.form-control:valid,
+.form-control.is-valid {
+  background-size: auto;
+}
+
+.no-appearance {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+// Spinbutton
+
+.b-form-spinbutton {
+  .btn {
+    padding-left: $input-btn-padding-x * 0.5;
+    padding-right: $input-btn-padding-x * 0.5;
+  }
+
+  output {
+    margin: 0 -0.5rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    font-size: $font-size-base * 1.125 !important;
+    font-weight: $font-weight-medium;
+    border: none !important;
+  }
+
+  &.form-control-sm {
+    output {
+      font-size: $font-size-base !important;
+    }
+  }
+
+  &.form-control-lg {
+    output {
+      font-size: $font-size-base * 1.375 !important;
+    }
+  }
+}
+
+// Custom checkbox & radio
+
+.custom-control {
+  padding-left: $custom-control-gutter + $custom-control-indicator-size;
+
+  .custom-control-label {
+    display: flex;
+    align-items: center;
+
+    &::before,
+    &::after {
+      left: -$custom-control-gutter - $custom-control-indicator-size;
+      top: $font-size-base * $line-height-base * 0.5 -
+        $custom-control-indicator-size * 0.5;
+    }
+  }
+
+  &.custom-checkbox,
+  &.custom-checkbox.b-custom-control-sm,
+  &.custom-checkbox.b-custom-control-lg,
+  &.custom-radio,
+  &.custom-radio.b-custom-control-sm,
+  &.custom-radio.b-custom-control-lg {
+    font-size: $font-size-2;
+    line-height: $custom-control-line-height;
+  }
+
+  &.custom-checkbox.b-custom-control-sm,
+  &.custom-radio.b-custom-control-sm {
+    padding-left: $custom-control-gutter + $custom-control-indicator-size-sm;
+
+    .custom-control-label {
+      min-height: $custom-control-indicator-size-sm;
+
+      &::before,
+      &::after {
+        left: -$custom-control-gutter - $custom-control-indicator-size-sm;
+        top: $font-size-base * $line-height-base * 0.5 -
+          $custom-control-indicator-size-sm * 0.5;
+        width: $custom-control-indicator-size-sm;
+        height: $custom-control-indicator-size-sm;
+      }
+    }
+  }
+
+  &.custom-checkbox.b-custom-control-lg,
+  &.custom-radio.b-custom-control-lg {
+    padding-left: $custom-control-gutter + $custom-control-indicator-size-lg;
+
+    .custom-control-label {
+      min-height: $custom-control-indicator-size-lg;
+
+      &::before,
+      &::after {
+        left: -$custom-control-gutter - $custom-control-indicator-size-lg;
+        top: $font-size-base * $line-height-base * 0.5 -
+          $custom-control-indicator-size-lg * 0.5;
+        width: $custom-control-indicator-size-lg;
+        height: $custom-control-indicator-size-lg;
+      }
+    }
+  }
+}
+
+.custom-control-input {
+  &:focus {
+    & ~ .custom-control-label {
+      &::before {
+        box-shadow: none;
+      }
+    }
+
+    &:not(:checked) {
+      & ~ .custom-control-label {
+        &::before {
+          border-color: $custom-control-indicator-border-color;
+        }
+      }
+    }
+  }
+
+  &[disabled],
+  &:disabled {
+    & ~ .custom-control-label {
+      &::before {
+        border-color: $gray-200;
+      }
+    }
+
+    &:checked {
+      & ~ .custom-control-label {
+        &::before {
+          border-color: $primary !important;
+          background-color: $primary !important;
+          opacity: 0.25;
+        }
+      }
+    }
+  }
+
+  &[type='radio'] {
+    &[disabled],
+    &:disabled {
+      &:checked {
+        & ~ .custom-control-label {
+          &::after {
+            border: 2px solid transparent;
+            border-radius: 50%;
+            background-image: none;
+            box-shadow: inset 0 0 0 2px $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Custom range fix
+
+.custom-range {
+  &::-webkit-slider-thumb,
+  &::-webkit-slider-thumb:focus,
+  &::-webkit-slider-thumb:active {
+    border-radius: $rounded-pill;
+    background-color: $primary;
+    background-image: $custom-range-thumb-bg-gradient;
+    box-shadow: none;
+    cursor: grab;
+  }
+
+  &::-moz-range-thumb,
+  &::-moz-range-thumb:focus,
+  &::-moz-range-thumb:active {
+    border-radius: $rounded-pill;
+    background-color: $primary;
+    background-image: $custom-range-thumb-bg-gradient;
+    box-shadow: none;
+    cursor: grab;
+  }
+
+  &::-ms-thumb,
+  &::-ms-thumb:focus,
+  &::-ms-thumb:active {
+    border-radius: $rounded-pill;
+    background-color: $primary;
+    box-shadow: none;
+    cursor: grab;
+  }
+}
+
+// Rating
+
+.form-control.b-rating,
+.b-rating {
+  padding-left: 0;
+  padding-right: 0;
+  color: $orange-2;
+
+  .b-rating-star {
+    padding: 0;
+  }
+
+  .b-rating-star-half {
+    .icon {
+      #starHalfEmpty {
+        fill: $gray-500 !important;
+      }
+    }
+  }
+
+  .b-rating-star-empty {
+    .icon {
+      fill: $gray-500;
+    }
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:not(.disabled):not(.readonly) {
+    .b-rating-star {
+      &:hover {
+        .b-rating-icon {
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+}
+
+// Dark form variant
+
+.form-dark {
+  .form-control {
+    color: $white;
+    border-color: $gray-900;
+    background-color: $gray-900;
+
+    &.is-valid {
+      border-color: $success;
+    }
+
+    &.is-invalid {
+      border-color: $danger;
+    }
+  }
+}

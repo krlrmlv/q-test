@@ -1,0 +1,12 @@
+#import "@/graphql/fragments/SlideFragment"
+query SlidesHomepage($slider_name: String!, $locale: String) {
+  slides: ekfgroup_catalog_slides(
+    where: {
+      language: { code: { _eq: $locale } }
+      slider: { name: { _eq: $slider_name }, layout_id: { _is_null: true } }
+    }
+    order_by: { sort_order: asc }
+  ) {
+    ...SlideFragment
+  }
+}

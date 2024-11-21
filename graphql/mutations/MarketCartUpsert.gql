@@ -1,0 +1,5 @@
+mutation MarketCartUpsert($products: [MarketCartAddProductsInput!]!) {
+  cart: market_cart_add_products(products: $products) {
+    id
+  }
+}

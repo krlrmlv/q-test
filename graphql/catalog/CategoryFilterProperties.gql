@@ -1,0 +1,5 @@
+query CategoryFilterProperties($categoryId: bigint = "") {
+  filterProperties: ekfgroup_category_filter_properties(where: {_and: {category_id: {_eq: $categoryId}, active: {_eq:true}}}) {
+    property_id
+  }
+}

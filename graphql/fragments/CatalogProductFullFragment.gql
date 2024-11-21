@@ -1,0 +1,51 @@
+#import "@/graphql/fragments/CatalogProductFragment"
+#import "@/graphql/fragments/CatalogProductPropertiesFragment"
+#import "@/graphql/fragments/CatalogProductLogisticParametrsFragment"
+#import "@/graphql/fragments/CatalogProductAnalogFragment"
+#import "@/graphql/fragments/CatalogProductFilesFragment"
+#import "@/graphql/fragments/CatalogCategoryFilesFragment"
+#import "@/graphql/fragments/CatalogProductAccessoriesSectionFragment"
+#import "@/graphql/fragments/CatalogProductAnalogsSectionFragment"
+#import "@/graphql/fragments/CatalogProductAdditionalSectionFragment"
+
+fragment CatalogProductFullFragment on ekfgroup_catalog_products {
+  ...CatalogProductFragment
+  ...CatalogProductFilesFragment
+  ...CatalogProductPropertiesFragment
+  ...CatalogProductLogisticParametrsFragment
+  ...CatalogProductAccessoriesSectionFragment
+  ...CatalogProductAnalogsSectionFragment
+  ...CatalogProductAdditionalSectionFragment
+
+  categories(where: { category: {} }, order_by: { is_main: desc }) {
+    category_id
+    is_main
+    category {
+      ...CatalogCategoryFilesFragment
+
+      description
+      has_service
+    }
+    category_id
+  }
+
+  description
+
+  images(order_by: { sort_order: asc }) {
+    file
+    name
+    sort_order
+  }
+
+  html_description
+  meta_description
+  meta_h1
+  meta_title
+  meta_keywords
+
+  photo3d {
+    photo3d {
+      path
+    }
+  }
+}

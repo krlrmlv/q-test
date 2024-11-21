@@ -1,0 +1,24 @@
+query NewsArticleProperties($locale: String, $slug: String) {
+  properties: ekfgroup_catalog_article_properties(
+    where: {
+      language: { code: { _eq: $locale } }
+      property_values: { article: { category: { slug: { _eq: $slug } } } }
+    }
+    order_by: { sort_order: asc }
+  ) {
+    id
+    name
+    sort_order
+    property_values(
+      distinct_on: property_value_id
+      order_by: [
+        { property_value_id: asc }
+        { property_value: { sort_order: asc } }
+      ]
+    ) {
+      property_value_id
+      sort_order
+      value
+    }
+  }
+}

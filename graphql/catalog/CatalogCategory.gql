@@ -1,0 +1,31 @@
+#import "@/graphql/fragments/CatalogCategoryFragment"
+#import "@/graphql/fragments/CatalogCategoryChildFragment"
+query CatalogCategory(
+  $cartId: String
+  $limit: Int
+  $locale: String!
+  $offset: Int = 0
+  $slug: String!
+  $propertiesIds: [String!]
+  $sortBy: [ekfgroup_catalog_category_product_order_by!]
+  $where: ekfgroup_catalog_category_product_bool_exp = {}
+) @cached(ttl: 600) {
+  categories: ekfgroup_catalog_categories(
+    where: {
+      active: { _eq: true }
+      _and: [
+        { _or: [{ slug: { _eq: $slug } }, { redirect_from: { _eq: $slug } }] }
+        { language: { code: { _eq: $locale } } }
+      ]
+    }
+  ) {
+    ...CatalogCategoryFragment
+
+    children(
+      order_by: [{ sort_order: asc }, { id: asc }]
+      where: { active: { _eq: true }, in_menu: { _eq: true } }
+    ) {
+      ...CatalogCategoryChildFragment
+    }
+  }
+}

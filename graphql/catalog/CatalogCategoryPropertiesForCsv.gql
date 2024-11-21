@@ -1,0 +1,15 @@
+query CsvCategoryProperties($categories: [bigint!], $locale: String!) {
+  properties: ekfgroup_csv_category_properties(
+    where: {
+      category_id: { _in: $categories }
+      language: { code: { _eq: $locale } }
+      property: {}
+    }
+    distinct_on: property_id
+  ) {
+    property {
+      id
+      name
+    }
+  }
+}

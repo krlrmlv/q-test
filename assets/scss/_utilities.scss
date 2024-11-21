@@ -1,0 +1,29 @@
+@import '~bootstrap/scss/utilities';
+
+img.embed-responsive-item {
+  object-fit: cover;
+}
+
+.object-fit-cover {
+  object-fit: cover !important;
+}
+
+.object-fit-contain {
+  object-fit: contain !important;
+}
+
+.embed-responsive-26by9.mobile-adaptive {
+  @include media-breakpoint-down(sm) {
+    &::before {
+      padding-top: percentage(divide(185, 328));
+    }
+  }
+}
+
+.embed-responsive-688by393.mobile-adaptive {
+  @include media-breakpoint-down(sm) {
+    &::before {
+      padding-top: percentage(divide(185, 328));
+    }
+  }
+}

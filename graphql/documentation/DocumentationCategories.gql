@@ -1,0 +1,34 @@
+#import "@/graphql/fragments/DocumentationCategoryFragment"
+query DocumentationCategories($locale: String) {
+  categories: ekfgroup_catalog_categories(
+    where: {
+      active: { _eq: true }
+      in_menu: { _eq: true }
+      language: { code: { _eq: $locale } }
+      parent_id: { _is_null: true }
+    }
+    order_by: { sort_order: asc, id: asc }
+  ) {
+    ...DocumentationCategoryFragment
+    children(
+      where: {
+        active: { _eq: true }
+        in_menu: { _eq: true }
+        language: { code: { _eq: $locale } }
+      }
+      order_by: { sort_order: asc, id: asc }
+    ) {
+      ...DocumentationCategoryFragment
+      children(
+        where: {
+          active: { _eq: true }
+          in_menu: { _eq: true }
+          language: { code: { _eq: $locale } }
+        }
+        order_by: { sort_order: asc, id: asc }
+      ) {
+        ...DocumentationCategoryFragment
+      }
+    }
+  }
+}

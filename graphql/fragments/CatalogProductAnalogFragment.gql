@@ -1,0 +1,28 @@
+fragment CatalogProductAnalogFragment on ekfgroup_catalog_products {
+  id
+  name
+  description
+  image
+  coefficient
+  hide_price
+  price
+  price_base
+  series
+  slug
+  status
+  vendor_code
+  carts(where: { cart_id: { _eq: $cartId } }) {
+    cart_id
+    quantity
+  }
+  unit_storage {
+    name
+  }
+  stocks_aggregate {
+    aggregate {
+      sum {
+        quantity
+      }
+    }
+  }
+}

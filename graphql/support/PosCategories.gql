@@ -1,0 +1,19 @@
+query PosCategories($locale: String!) {
+  categories: ekfgroup_catalog_pos_material_categories(
+    order_by: { sort_order: asc }
+    where: { language: { code: { _eq: $locale } } }
+  ) {
+    name
+    slug
+
+    items: pos_materials(
+      order_by: { sort_order: asc }
+      where: { language: { code: { _eq: $locale } } }
+    ) {
+      file
+      file_size
+      preview_image
+      title
+    }
+  }
+}

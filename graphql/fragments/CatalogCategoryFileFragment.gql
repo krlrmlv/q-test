@@ -1,0 +1,12 @@
+fragment CatalogCategoryFileFragment on ekfgroup_catalog_category_files {
+  file
+  file_type_id
+  name
+  file_type {
+    sort_order
+  }
+  size
+  description
+  sort_order
+  name_plural
+}

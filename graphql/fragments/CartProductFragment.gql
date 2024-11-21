@@ -1,0 +1,21 @@
+fragment CartProductFragment on ekfgroup_catalog_products {
+  id
+  name
+  image
+  coefficient
+  price
+  price_base
+  slug
+  unit_storage {
+    name
+  }
+  status
+  stocks_aggregate {
+    aggregate {
+      sum {
+        quantity
+      }
+    }
+  }
+  vendor_code
+}

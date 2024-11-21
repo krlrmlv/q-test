@@ -1,0 +1,20 @@
+query CatalogProductsAvailablePriceRange(
+  $locale: String
+  $category_slug: String
+  $conditions: [ekfgroup_catalog_products_bool_exp!]
+) {
+  products_price_range: ekfgroup_catalog_products_aggregate(where: {
+    categories: { category: {slug: {_eq:  $category_slug } } },
+    language: { code: { _eq: $locale } },
+    _and: $conditions
+  }) {
+    aggregate {
+      max {
+        price
+      }
+      min {
+        price
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.section-home {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.section-home-contacts {
+  padding-top: 2rem;
+  padding-bottom: 0;
+}
+
+@include media-breakpoint-up(lg) {
+  .section-home,
+  .section-home-contacts {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}

@@ -1,0 +1,5 @@
+fragment LayoutFragment on ekfgroup_catalog_layouts {
+  id
+  name
+  slug
+}

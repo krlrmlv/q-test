@@ -1,0 +1,19 @@
+#import "@/graphql/fragments/SolutionsCategorySolutionFragment"
+query SolutionsCategorySolutions(
+  $category_id: bigint!
+  $limit: Int = 8
+  $locale: String!
+  $offset: Int = 8
+) {
+  solutions: ekfgroup_catalog_solutions_solutions(
+    limit: $limit
+    offset: $offset
+    order_by: [{ sort_order: asc }, { name: asc }]
+    where: {
+      categories: { category_id: { _eq: $category_id } }
+      language: { code: { _eq: $locale } }
+    }
+  ) {
+    ...SolutionsCategorySolutionFragment
+  }
+}

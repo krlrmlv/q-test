@@ -1,0 +1,14 @@
+#import "@/graphql/fragments/SlideFragment"
+query LayoutMainSlides($locale: String!, $slug: String!) {
+  slides: ekfgroup_catalog_slides(
+    order_by: { sort_order: asc }
+    where: {
+      _and: [
+        { language: { code: { _eq: $locale } } }
+        { slider: { layout: { slug: { _eq: $slug } }, name: { _eq: "main" } } }
+      ]
+    }
+  ) {
+    ...SlideFragment
+  }
+}

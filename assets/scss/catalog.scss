@@ -1,0 +1,123 @@
+.card-btn-link {
+  padding: 0;
+  text-align: left;
+  line-height: inherit;
+  border: none;
+  color: $secondary;
+  font-size: $font-size-2;
+  text-decoration: none;
+
+  &:hover {
+    color: $body-color;
+  }
+}
+
+.catalog-product-price {
+  .product-price-sum {
+    color: $body-color;
+  }
+
+  .product-price-type {
+    margin-bottom: 0.25rem;
+    white-space: nowrap;
+  }
+
+  .product-price-caption {
+    color: $gray-500;
+  }
+
+  .product-price-recommended {
+    .product-price-sum {
+      font-weight: $font-weight-medium;
+    }
+
+    .product-price-caption {
+      margin-left: 0.25rem;
+    }
+  }
+
+  .product-price-base,
+  .product-price-bulk,
+  .product-price-caption {
+    font-size: $font-size-1;
+  }
+
+  @include media-breakpoint-down(md) {
+    :not(.price-on-request) {
+      .product-price-caption {
+        display: none;
+      }
+    }
+  }
+}
+
+.suggestion-card {
+  .product-price-base {
+    display: none;
+  }
+}
+
+.btn-compare-toggle,
+.btn-vendor-code-copy {
+  display: flex;
+  color: $gray-600;
+  font-weight: $font-weight-normal;
+  border: none;
+  text-decoration: none;
+
+  &:not(:disabled):not(.disabled) {
+    &:hover {
+      color: $primary;
+      background-color: transparent;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      box-shadow: none;
+      text-decoration: none;
+    }
+
+    &:focus-visible {
+      color: $primary;
+    }
+
+    &.active {
+      color: $primary;
+      background-color: transparent;
+    }
+  }
+
+  @media (hover: none) {
+    &:not(:disabled):not(.disabled) {
+      &:hover,
+      &:focus {
+        color: $gray-600;
+      }
+
+      &.active {
+        color: $primary;
+      }
+    }
+  }
+}
+
+// Mobile-only tab toggles
+
+.catalog-sidebar-toggles {
+  border-top: $border-width solid $border-color;
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    padding: $nav-link-padding-y 0;
+    font-size: $font-size-2;
+    border-top: $border-width solid transparent;
+    border-bottom: $border-width solid $border-color;
+    color: $body-color;
+
+    .icon {
+      fill: $secondary;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+fragment SolutionsHelpFragment on ekfgroup_catalog_solutions_help {
+  description: text
+  name
+  title
+}

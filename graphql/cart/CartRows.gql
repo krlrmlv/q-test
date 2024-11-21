@@ -1,0 +1,9 @@
+query CartRows($cartId: String) {
+  cartRows: ekfgroup_cart_aggregate(where: { cart_id: { _eq: $cartId } }) {
+    aggregate {
+      sum {
+        quantity
+      }
+    }
+  }
+}

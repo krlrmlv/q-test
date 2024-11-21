@@ -1,0 +1,44 @@
+version: "3.3"
+services:
+  geoipupdate:
+    container_name: geoipupdate
+    image: ghcr.io/maxmind/geoipupdate
+    restart: unless-stopped
+    environment:
+      - GEOIPUPDATE_ACCOUNT_ID=${GEOIPUPDATE_ACCOUNT_ID}
+      - GEOIPUPDATE_LICENSE_KEY=${GEOIPUPDATE_LICENSE_KEY}
+      - 'GEOIPUPDATE_EDITION_IDS=GeoLite2-ASN GeoLite2-City GeoLite2-Country'
+      - GEOIPUPDATE_FREQUENCY=72
+    volumes:
+      - ./../../volumes/shared/GeoIP:/usr/share/GeoIP
+  ekfgroup:
+    image: registry.ekf.su:443/ekfgroup:latest
+    command:
+      - start
+    build:
+      dockerfile: ./build/dockerfile
+      context: ../
+      target: production
+      args:
+        - USER_ID=996
+        - GROUP_ID=993
+    container_name: ekfgroup
+    restart: unless-stopped
+    volumes:
+      - ./../../volumes/shared/uploads:/usr/src/app/static/uploads
+    ports:
+      - "8009:8009"
+  ekfgroup-nginx:
+    image: registry.ekf.su:443/ekfgroup-nginx:latest
+    container_name: ekfgroup-nginx
+    restart: unless-stopped
+    build:
+      context: ../
+      dockerfile: ./build/nginx.dockerfile
+      target: production
+    volumes:
+      - ./../../volumes/shared/uploads:/usr/src/app/static/uploads
+      - ./../../volumes/shared/GeoIP:/usr/share/GeoIP
+    ports:
+      - "80:80"
+      - "443:443"

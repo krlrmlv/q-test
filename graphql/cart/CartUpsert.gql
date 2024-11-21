@@ -1,0 +1,15 @@
+mutation CartUpsert(
+  $cartId: String!
+  $productId: String!
+  $quantity: Int!
+  $solution: String
+) {
+  ekfgroup_cart_upsert_product(
+    cart_id: $cartId
+    product_id: $productId
+    quantity: $quantity
+    solution: $solution
+  ) {
+    ok
+  }
+}

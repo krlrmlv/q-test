@@ -1,0 +1,53 @@
+@import '~bootstrap/scss/input-group';
+
+.input-group {
+  &.input-group-flush {
+    .form-control {
+      border-right: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .input-group-append {
+      .btn,
+      .input-group-text {
+        padding: $input-btn-padding-y;
+        border: 1px solid $border-color;
+        border-left: none;
+        color: inherit;
+        background-color: transparent;
+      }
+
+      .btn {
+        @include hover() {
+          background-color: $gray-100;
+        }
+      }
+    }
+
+    &.focus,
+    &:focus-within {
+      box-shadow: $input-focus-box-shadow;
+    }
+
+    &.input-group-sm {
+      .input-group-append {
+        .btn,
+        .input-group-text {
+          padding: $input-btn-padding-y-sm;
+        }
+      }
+    }
+
+    &.input-group-lg {
+      .input-group-append {
+        .btn,
+        .input-group-text {
+          padding: $input-btn-padding-y-lg;
+        }
+      }
+    }
+  }
+}

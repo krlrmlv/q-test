@@ -1,0 +1,11 @@
+fragment SlideFragment on ekfgroup_catalog_slides {
+  id
+  title
+  subtitle
+  image
+  link
+  link_text
+  slider {
+    name
+  }
+}

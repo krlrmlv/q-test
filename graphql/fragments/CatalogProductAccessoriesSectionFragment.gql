@@ -1,0 +1,14 @@
+#import "@/graphql/fragments/CatalogProductAnalogFragment"
+
+fragment CatalogProductAccessoriesSectionFragment on ekfgroup_catalog_products {
+  relatedAnalogs: analogs(
+    limit: 10
+    order_by: { priority: asc }
+    where: $relatedAnalogsWhere
+  ) {
+    analogType: analog_type
+    analog {
+      ...CatalogProductAnalogFragment
+    }
+  }
+}

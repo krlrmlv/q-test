@@ -1,0 +1,50 @@
+@import '~bootstrap/scss/button-group';
+
+$tab-text-dark: $secondary;
+$tab-text-light: $white;
+
+.btn-group-tabs {
+  .btn {
+    flex: 1 1 0;
+    font-weight: $font-weight-normal;
+
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active {
+      color: $body-color;
+      background-color: $white;
+      box-shadow: $box-shadow;
+
+      &:hover {
+        background-color: $gray-100;
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-group-tabs {
+    .btn-#{$color} {
+      color: color-yiq($value, $tab-text-dark, $tab-text-light);
+
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled).active {
+        border-color: $value;
+      }
+
+      &:not(:disabled):not(.disabled):hover {
+        border-color: $value;
+        background-color: $value;
+        z-index: initial;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .btn-group-tabs {
+    .btn {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+}

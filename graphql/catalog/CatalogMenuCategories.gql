@@ -1,0 +1,26 @@
+#import "@/graphql/fragments/CatalogMenuCategoryFragment"
+query CatalogMenuCategories($locale: String) {
+  categories: ekfgroup_catalog_categories(
+    order_by: [{ sort_order: asc }, { id: asc }]
+    where: {
+      active: { _eq: true }
+      in_menu: { _eq: true }
+      language: { code: { _eq: $locale } }
+      parent_id: { _is_null: true }
+    }
+  ) {
+    ...CatalogMenuCategoryFragment
+    children(
+      order_by: [{ sort_order: asc }, { id: asc }]
+      where: { active: { _eq: true }, in_menu: { _eq: true } }
+    ) {
+      ...CatalogMenuCategoryFragment
+      children(
+        order_by: [{ sort_order: asc }, { id: asc }]
+        where: { active: { _eq: true }, in_menu: { _eq: true } }
+      ) {
+        ...CatalogMenuCategoryFragment
+      }
+    }
+  }
+}

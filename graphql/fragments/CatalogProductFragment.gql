@@ -1,0 +1,22 @@
+fragment CatalogProductFragment on ekfgroup_catalog_products {
+  active_im
+  id
+  name
+  image
+  coefficient
+  created_at
+  hide_price
+  novelty
+  parent_id
+  popularity
+  price
+  price_base
+  series
+  slug
+  status
+  vendor_code
+  hyperlink
+  unit_storage {
+    name
+  }
+}

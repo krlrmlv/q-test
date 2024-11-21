@@ -1,0 +1,51 @@
+@import '~bootstrap/scss/transitions';
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.15s ease-in-out;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s ease-in-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-out-enter-active {
+  transition: none;
+}
+.fade-out-leave-active {
+  transition: opacity 0.15s ease-out;
+}
+.fade-out-leave-to {
+  opacity: 0;
+}
+
+.custom-tabs-enter-active,
+.custom-tabs-leave-active {
+  transition: opacity 0.15s ease-in-out;
+}
+.custom-tabs-enter,
+.custom-tabs-leave-to {
+  opacity: 0;
+}
+
+// Catalog menu backdrop
+.backdrop-fade-enter-active {
+  transition: opacity 0.15s ease-in-out;
+  transition-delay: 0.15s;
+}
+.backdrop-fade-leave-active {
+  transition: none;
+}
+.backdrop-fade-enter,
+.backdrop-fade-leave-to {
+  opacity: 0;
+}

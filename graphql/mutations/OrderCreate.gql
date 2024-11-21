@@ -1,0 +1,22 @@
+mutation OrderCreate($order: EkfgroupCreateOrderInput!) {
+  ekfgroup_create_order(order: $order) {
+    id
+    name
+    phone
+    email
+    city
+    comment
+    inn
+    promocode
+    company_name
+    partner_seller_point_id
+    status
+    reason
+    currency_id
+    is_sent_tkp
+    is_physical_person
+    is_lead_chosen_manually
+    created_at
+    updated_at
+  }
+}

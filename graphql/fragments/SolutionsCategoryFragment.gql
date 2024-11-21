@@ -1,0 +1,11 @@
+fragment SolutionsCategoryFragment on ekfgroup_catalog_solutions_categories {
+  banner_image
+  categories_text
+  description
+  icon: preview_icon
+  image
+  metrika_goal
+  name
+  slug
+  solutions_text
+}

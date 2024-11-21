@@ -1,0 +1,10 @@
+#import "@/graphql/fragments/LocationCityFragment"
+
+query CitiesSearch($q: String = "") {
+  searchResults: cities(
+    order_by: { name: asc }
+    where: { name: { _ilike: $q }, type_name: { _eq: "г" } }
+  ) {
+    ...LocationCityFragment
+  }
+}

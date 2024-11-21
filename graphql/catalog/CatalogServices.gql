@@ -1,0 +1,8 @@
+query CatalogServices {
+  services: ekfgroup_services(order_by: { sort_order: asc }) {
+    title
+    link
+    phones
+    address
+  }
+}

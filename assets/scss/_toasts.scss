@@ -1,0 +1,52 @@
+@import '~bootstrap/scss/toasts';
+
+.toast-header {
+  padding: 0.75rem 1.25rem 0;
+  font-weight: $font-weight-medium;
+  border-bottom: none;
+  color: $toast-color;
+  background-color: $toast-background-color;
+
+  .close {
+    @extend .btn;
+    @extend .btn-sm;
+    @extend .btn-icon;
+
+    width: calc(16px + 0.5rem);
+    height: calc(16px + 0.5rem);
+    margin-bottom: 0 !important;
+    font-size: 0;
+    line-height: 0;
+    border: none;
+    border-radius: $rounded-pill;
+    background-image: url('~/assets/images/icons/close-16.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    opacity: 0.5;
+    transition: $transition-base;
+    transition-property: opacity;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.toast-body {
+  padding: 1rem 1.25rem;
+}
+
+@each $color, $value in $theme-colors {
+  .b-toast.b-toast-#{$color} {
+    .toast {
+      color: inherit;
+      background-color: lighten($value, 30%);
+
+      .toast-header {
+        color: darken($value, 20%);
+        background-color: transparent;
+      }
+    }
+  }
+}

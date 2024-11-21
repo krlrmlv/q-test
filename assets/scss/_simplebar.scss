@@ -1,0 +1,22 @@
+$simplebar-width: 4px;
+
+.simplebar-track {
+  background-color: $gray-200 !important;
+
+  &.simplebar-vertical {
+    width: $simplebar-width !important;
+  }
+
+  &.simplebar-horizontal {
+    height: $simplebar-width !important;
+  }
+}
+
+.simplebar-scrollbar {
+  background-color: $gray-600 !important;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+ top: 0 !important;
+}
+

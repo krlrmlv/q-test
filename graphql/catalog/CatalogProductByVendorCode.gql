@@ -1,0 +1,12 @@
+query CatalogProductByVendorCode($locale: String!, $vendor_code: String!) {
+  products: ekfgroup_catalog_products(
+    where: {
+      hide_price: { _eq: false }
+      language: { code: { _eq: $locale } }
+      vendor_code: { _eq: $vendor_code }
+    }
+  ) {
+    coefficient
+    id
+  }
+}

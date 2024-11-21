@@ -1,0 +1,49 @@
+#import "@/graphql/fragments/CatalogProductPropertyFragment"
+#import "@/graphql/fragments/CatalogProductPropertyUnitFragment"
+fragment SearchProductFragment on ekfgroup_catalog_products {
+  id
+  name
+  image
+  coefficient
+  created_at
+  hide_price
+  meta_description
+  novelty
+  parent_id
+  popularity
+  price
+  price_base
+  series
+  slug
+  status
+  vendor_code
+  carts(where: { cart_id: { _eq: $cartId } }) {
+    cart_id
+    quantity
+  }
+
+  unit_storage {
+    name
+  }
+
+  property_values(
+    limit: 5
+    where: {
+      property: { name: { _is_null: false } }
+      value: { _is_null: false }
+    }
+  ) {
+    value
+    property {
+      ...CatalogProductPropertyFragment
+    }
+    property_unit {
+      ...CatalogProductPropertyUnitFragment
+    }
+  }
+  totalAvailableProperties: property_values_aggregate {
+    aggregate {
+      count
+    }
+  }
+}

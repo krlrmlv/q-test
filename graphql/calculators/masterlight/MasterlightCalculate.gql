@@ -1,0 +1,24 @@
+mutation MasterlightCalculate(
+  $room_length: Float!
+  $room_width: Float!
+  $room_height: Float!
+  $work_area_height: Float!
+  $reflection_factor_id: Int!
+  $safety_factor: Float!
+  $illumination_level: Int!
+  $product_id: String!
+) {
+  masterlight_result: ekfgroup_masterlight_calculate(
+    room_length: $room_length
+    room_width: $room_width
+    room_height: $room_height
+    work_area_height: $work_area_height
+    reflection_factor_id: $reflection_factor_id
+    safety_factor: $safety_factor
+    illumination_level: $illumination_level
+    product_id: $product_id
+  ) {
+    products_count
+    average_illumination
+  }
+}

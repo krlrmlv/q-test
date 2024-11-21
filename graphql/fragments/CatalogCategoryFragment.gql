@@ -1,0 +1,64 @@
+#import "@/graphql/fragments/CatalogCategoryFilesFragment"
+#import "@/graphql/fragments/CatalogCategoryProductsFragment"
+#import "@/graphql/fragments/CatalogCategoryPropertiesFragment"
+#import "@/graphql/fragments/CatalogCategoryTagsFragment"
+fragment CatalogCategoryFragment on ekfgroup_catalog_categories {
+  created_at
+  description
+  filters
+  id
+  has_service
+  image
+  link
+  meta_description
+  meta_h1
+  meta_title
+  meta_keywords
+  name
+  parent_id
+  pdf
+  price_max
+  price_min
+  redirect_from
+  root {
+    id
+  }
+  show_filters
+  show_subcategories
+  slug
+  sort_order
+  clientOnlyDescription: data_description
+
+  ...CatalogCategoryFilesFragment
+  ...CatalogCategoryProductsFragment
+  ...CatalogCategoryPropertiesFragment
+  ...CatalogCategoryTagsFragment
+
+  catalogFile: files(
+    where: { file_type_id: { _eq: "77527d49-735f-11e6-971e-000c29c6d5f2" } }
+    order_by: { created_at: desc }
+    limit: 1
+  ) {
+    file
+  }
+
+  # Does category have any products at all
+  hasProducts: products_aggregate(
+    where: { product: { price: { _gt: 0 }, active: { _eq: true } } }
+  ) {
+    aggregate {
+      count
+    }
+  }
+
+  # Category products matching current filter
+  productsTotal: products_aggregate(
+    where: {
+      _and: [$where, { product: { price: { _gt: 0 }, active: { _eq: true } } }]
+    }
+  ) {
+    aggregate {
+      count
+    }
+  }
+}

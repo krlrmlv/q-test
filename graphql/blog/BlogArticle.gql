@@ -1,0 +1,40 @@
+#import "@/graphql/fragments/BlogArticleFragment"
+query BlogArticle($locale: String!, $slug: String!) {
+  articles: ekfgroup_catalog_articles(
+    limit: 1
+    order_by: { published_at: desc }
+    where: {
+      category: { slug: { _eq: "blog" } }
+      language: { code: { _eq: $locale } }
+      slug: { _eq: $slug }
+    }
+  ) {
+    ...BlogArticleFragment
+  }
+
+  latest: ekfgroup_catalog_articles(
+    limit: 2
+    order_by: { published_at: desc }
+    where: {
+      language: { code: { _eq: $locale } }
+      category: { slug: { _eq: "blog" } }
+      popularity: { _neq: true }
+      slug: { _neq: $slug }
+    }
+  ) {
+    ...BlogArticleFragment
+  }
+
+  popular: ekfgroup_catalog_articles(
+    limit: 2
+    order_by: { published_at: desc }
+    where: {
+      language: { code: { _eq: $locale } }
+      category: { slug: { _eq: "blog" } }
+      popularity: { _eq: true }
+      slug: { _neq: $slug }
+    }
+  ) {
+    ...BlogArticleFragment
+  }
+}

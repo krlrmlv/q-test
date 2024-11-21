@@ -1,0 +1,5 @@
+query CategoryOnly($slug: String!) @cached(ttl: 600) {
+  categoryId: ekfgroup_catalog_categories(where: {_and: {slug: {_eq: $slug}, active: {_eq: true}}}, limit: 1) {
+    id
+  }
+}

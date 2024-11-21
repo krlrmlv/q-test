@@ -1,0 +1,11 @@
+query MasterlightRoomLuxLevels($locale: String!) {
+  room_groups: ekfgroup_masterlight_room_groups(where: { language: { code: { _eq: $locale } } }) {
+    id
+    name
+    rooms {
+      id
+      name
+      lux_level
+    }
+  }
+}

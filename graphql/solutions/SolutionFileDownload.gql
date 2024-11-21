@@ -1,0 +1,22 @@
+mutation SolutionFileDownload(
+  $name: String!
+  $email: String!
+  $phone: String
+  $company: String
+  $companyType: String
+  $solution_file_id: Int!
+  $long_form: Boolean!
+) {
+  result: ekfgroup_solution_download(
+    email: $email
+    name: $name
+    phone: $phone
+    company: $company
+    companyType: $companyType
+    solution_file_id: $solution_file_id
+    long_form: $long_form
+  ) {
+    message
+    success
+  }
+}

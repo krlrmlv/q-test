@@ -1,0 +1,21 @@
+query MasterlightProductCategories($locale: String!) {
+  categories: ekfgroup_masterlight_categories {
+    category(where: { language: { code: { _eq: $locale } } }) {
+      id
+      name
+      slug
+    }
+    products {
+      product_id
+      product(where: { language: { code: { _eq: $locale } } }) {
+        id
+        image
+        name
+        unit_storage {
+          name
+        }
+        vendor_code
+      }
+    }
+  }
+}

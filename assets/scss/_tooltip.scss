@@ -1,0 +1,8 @@
+@import '~bootstrap/scss/tooltip';
+
+.tooltip-inner {
+  line-height: 1.2;
+  text-align: left;
+  border-radius: $tooltip-border-radius;
+  box-shadow: $tooltip-box-shadow;
+}

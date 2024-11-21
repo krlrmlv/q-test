@@ -1,0 +1,26 @@
+#import "@/graphql/fragments/CatalogProductStockFragment"
+
+query CatalogProductStockPartnerByLocation(
+  $cityWhere: ekfgroup_partner_actual_stocks_bool_exp = {}
+  $regionWhere: ekfgroup_partner_actual_stocks_bool_exp = {}
+  $otherWhere: ekfgroup_partner_actual_stocks_bool_exp = {}
+) {
+  city: ekfgroup_partner_actual_stocks(
+    where: $cityWhere
+    order_by: { quantity: desc }
+  ) {
+    ...CatalogProductStockFragment
+  }
+  region: ekfgroup_partner_actual_stocks(
+    where: $regionWhere
+    order_by: { quantity: desc }
+  ) {
+    ...CatalogProductStockFragment
+  }
+  other: ekfgroup_partner_actual_stocks(
+    where: $otherWhere
+    order_by: { quantity: desc }
+  ) {
+    ...CatalogProductStockFragment
+  }
+}

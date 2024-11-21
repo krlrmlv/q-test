@@ -1,0 +1,14 @@
+fragment SolutionsCategorySolutionFragment on ekfgroup_catalog_solutions_solutions {
+  created_at
+  id
+  name
+  vendor_code
+  slug
+  images: files(
+    limit: 1
+    order_by: [{ sort_order: asc }, { id: asc }]
+    where: { file_type_id: { _eq: 4 } }
+  ) {
+    file
+  }
+}

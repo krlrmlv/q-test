@@ -1,0 +1,15 @@
+User-Agent: *
+Allow: /*?page
+Allow: /ru/support/pos?tab=*
+Disallow: /*documents
+Disallow: /ru/support/feedback
+Disallow: /ru/cart
+Disallow: /ru/support/report
+Disallow: /ru/support/question
+Disallow: /*?*
+Disallow: /*.pdf$
+Disallow: /*.xls$
+Disallow: /*.docx$
+Disallow: /*filters=*
+Host: https://ekfgroup.com
+Sitemap: https://ekfgroup.com/sitemap.xml

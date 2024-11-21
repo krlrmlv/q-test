@@ -1,0 +1,26 @@
+query CatalogProductsAvailableFilters(
+  $locale: String
+  $category_slug: String
+  $conditions: [ekfgroup_catalog_products_bool_exp!]
+  $propertyIds: [String!]
+) @cached(ttl: 600) {
+  product_property_values: ekfgroup_catalog_product_property_value(
+    where: {
+      language: { code: { _eq: $locale } },
+      # categories: {
+      #   category: { slug: {_eq: $category_slug }}
+      # },
+      product: {
+        categories: {
+          category: { slug: {_eq: $category_slug }}
+        },
+        _and: $conditions
+      },
+      property_id: { _in: $propertyIds }
+    }
+    distinct_on: [property_id, value]
+  ) {
+    property_id
+    value
+  }
+}

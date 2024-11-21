@@ -1,0 +1,6 @@
+query FilesSettings {
+  settings: ekfgroup_settings {
+    key
+    value
+  }
+}

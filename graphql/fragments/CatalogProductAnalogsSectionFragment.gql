@@ -1,0 +1,27 @@
+#import "@/graphql/fragments/CatalogProductAnalogFragment"
+
+fragment CatalogProductAnalogsSectionFragment on ekfgroup_catalog_products {
+  replacementEkfAnalog: analogs(
+    limit: 1
+    order_by: { priority: asc }
+    where: $replacementEkfAnalogWhere
+  ) {
+    analogType: analog_type
+    functionalType: functional_type
+    analog {
+      ...CatalogProductAnalogFragment
+    }
+  }
+
+  ekfAnalogs: analogs(
+    limit: 10
+    order_by: { priority: asc }
+    where: $ekfAnalogsWhere
+  ) {
+    analogType: analog_type
+    functionalType: functional_type
+    analog {
+      ...CatalogProductAnalogFragment
+    }
+  }
+}

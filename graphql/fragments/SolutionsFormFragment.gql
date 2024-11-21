@@ -1,0 +1,5 @@
+fragment SolutionsFormFragment on ekfgroup_catalog_solutions_forms {
+  id
+  subtitle
+  title
+}

@@ -1,0 +1,6 @@
+fragment SearchDropdownCategoryFragment on ekfgroup_catalog_categories {
+  id
+  image
+  name
+  slug
+}

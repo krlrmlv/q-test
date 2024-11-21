@@ -1,0 +1,7 @@
+fragment LanguageFragment on ekfgroup_languages {
+  code
+  id
+  international_name
+  iso
+  name
+}

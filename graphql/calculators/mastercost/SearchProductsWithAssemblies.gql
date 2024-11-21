@@ -1,0 +1,57 @@
+query SearchProductsWithAssemblies(
+  $category_query: String = ""
+  $locale: String!
+  $page_url: String = ""
+  $q: String
+  $user_ip: inet = ""
+) {
+  products: ekfgroup_catalog_search(
+    args: { q: $q, page_url: $page_url, user_ip: $user_ip }
+    limit: 7
+    where: { language: { code: { _eq: $locale } } }
+  ) {
+    id
+    parent_id
+    vendor_code
+    name
+    coefficient
+    price
+    price_base
+    slug
+    status
+    unit_transport_packaging {
+      coefficient
+    }
+
+    unit_storage {
+      id
+      name
+      coefficient
+    }
+    assemblies {
+      id
+      name
+      is_main
+      products {
+        product_id
+        assembly_id
+        qty
+        product {
+          id
+          parent_id
+          vendor_code
+          name
+          coefficient
+          price
+          price_base
+          slug
+          unit_storage {
+            id
+            name
+            coefficient
+          }
+        }
+      }
+    }
+  }
+}

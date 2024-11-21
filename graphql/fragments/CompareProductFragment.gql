@@ -1,0 +1,38 @@
+#import "@/graphql/fragments/CatalogProductPropertyFragment"
+#import "@/graphql/fragments/CatalogProductPropertyUnitFragment"
+fragment CompareProductFragment on ekfgroup_catalog_products {
+  id
+  name
+  image
+  coefficient
+  created_at
+  hide_price
+  novelty
+  parent_id
+  popularity
+  price
+  price_base
+  series
+  slug
+  status
+  vendor_code
+  carts(where: { cart_id: { _eq: $cartId } }) {
+    cart_id
+    quantity
+  }
+  categories {
+    category {
+      id
+      name
+    }
+  }
+  property_values {
+    value
+    property {
+      ...CatalogProductPropertyFragment
+    }
+    property_unit {
+      ...CatalogProductPropertyUnitFragment
+    }
+  }
+}

@@ -1,0 +1,35 @@
+#import "@/graphql/fragments/VideoFragment"
+query VideoPlaylists(
+  $limit: Int
+  $locale: String!
+  $videoLimit: Int = 3
+  $videoOffset: Int = 0
+  $where: ekfgroup_catalog_video_playlists_bool_exp = {}
+) {
+  playlists: ekfgroup_catalog_video_playlists(
+    where: {
+      _and: [
+        $where
+        { language: { code: { _eq: $locale } } }
+        { videos: {} } # skip empty playlists
+      ]
+    }
+    limit: $limit
+    order_by: [{ sort_order: asc }, { id: desc }]
+  ) {
+    id
+    title
+    totalVideos: videos_aggregate {
+      aggregate {
+        count
+      }
+    }
+    videos(
+      limit: $videoLimit
+      offset: $videoOffset
+      order_by: [{ sort_order: asc }, { id: desc }]
+    ) {
+      ...VideoFragment
+    }
+  }
+}

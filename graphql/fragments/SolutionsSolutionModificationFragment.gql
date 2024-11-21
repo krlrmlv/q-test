@@ -1,0 +1,15 @@
+fragment SolutionsSolutionModificationFragment on ekfgroup_catalog_solutions_solutions {
+  id
+
+  images: files(where: { file_type_id: { _eq: 4 } }) {
+    file
+    id
+    name
+    sort_order
+  }
+
+  name
+  slug
+  sub_title
+  vendor_code
+}

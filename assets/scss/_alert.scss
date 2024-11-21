@@ -1,0 +1,12 @@
+@import '~bootstrap/scss/alert';
+
+.alert-info {
+  span {
+    color: $gray-900;
+  }
+}
+
+.alert-gray {
+  background-color: $gray-120;
+  border-color: $gray-120;
+}

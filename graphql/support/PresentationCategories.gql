@@ -1,0 +1,21 @@
+query PresentationCategories($locale: String!) {
+  categories: ekfgroup_catalog_presentation_categories(
+    order_by: { sort_order: asc }
+    where: {
+      language: { code: { _eq: $locale } }
+      presentations_aggregate: { count: { predicate: { _gt: 0 } } }
+    }
+  ) {
+    name
+
+    items: presentations(
+      order_by: { sort_order: asc }
+      where: { language: { code: { _eq: $locale } } }
+    ) {
+      file
+      file_size
+      preview_image
+      title
+    }
+  }
+}

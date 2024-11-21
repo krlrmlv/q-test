@@ -1,0 +1,9 @@
+mutation CartDelete($cartId: String!, $productId: String!, $solution: String) {
+  ekfgroup_cart_delete_product(
+    cart_id: $cartId
+    product_id: $productId
+    solution: $solution
+  ) {
+    ok
+  }
+}

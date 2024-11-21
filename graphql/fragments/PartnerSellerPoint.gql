@@ -1,0 +1,45 @@
+fragment PartnerSellerPoint on ekfgroup_partner_seller_points {
+  building
+  city
+  commercial_name
+
+  country {
+    short_name
+    name
+  }
+
+  designer
+  diy
+  email
+  federal_district
+  geo_coords
+  head_partner_id
+  house
+  id
+  installer
+  internet_shop
+  internet_shop_url
+  is_panel_equipment_manufacturer
+  is_system_integrators
+  legal_entity_access
+  nky
+  order_access
+
+  partner {
+    commercial_name
+  }
+
+  phone
+  physical_person_access
+  region
+  retail
+  rrd_id
+  sales
+  site_url
+  sort_order
+  status
+  street
+  tkp_id
+  user_id
+  wholesale
+}

@@ -1,0 +1,9 @@
+fragment LocationCityFragment on cities {
+  fias_id
+  name
+  region_fias_id
+  region_name
+  region_type: region_type_name_full
+  type_short: type_name
+  type: type_name_full
+}

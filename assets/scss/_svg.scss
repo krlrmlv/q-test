@@ -1,0 +1,17 @@
+.icon {
+  fill: currentColor;
+  transition: $transition-base;
+  transition-property: fill;
+}
+
+@each $color, $value in $theme-colors {
+  .fill-#{$color},
+  .fill-#{$color} .icon {
+    fill: $value !important;
+  }
+
+  .stroke-#{$color},
+  .stroke-#{$color} .icon {
+    stroke: $value !important;
+  }
+}

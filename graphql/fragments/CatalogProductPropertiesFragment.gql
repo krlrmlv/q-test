@@ -1,0 +1,13 @@
+#import "@/graphql/fragments/CatalogProductPropertyFragment"
+#import "@/graphql/fragments/CatalogProductPropertyUnitFragment"
+fragment CatalogProductPropertiesFragment on ekfgroup_catalog_products {
+  property_values(order_by: { sort_order: asc }) {
+    value
+    property {
+      ...CatalogProductPropertyFragment
+    }
+    property_unit {
+      ...CatalogProductPropertyUnitFragment
+    }
+  }
+}

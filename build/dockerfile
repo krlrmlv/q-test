@@ -1,0 +1,58 @@
+FROM ubuntu:22.04 AS build
+
+ENV NODE_VERSION=20.15.0
+
+RUN apt-get update && apt -y install curl gcc g++ make build-essential openssl libssl-dev gnupg2 python3
+
+ENV NVM_DIR=/root/.nvm
+ENV PATH="/root/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+COPY ./build/node_install.sh ./
+RUN chmod +x ./node_install.sh
+RUN ./node_install.sh
+
+WORKDIR /usr/src/app
+
+COPY package.json yarn.lock ./
+RUN yarn install
+ENV HOST=0.0.0.0
+ENV PORT=8009
+
+COPY ./ .
+RUN yarn build
+EXPOSE 8009
+ENTRYPOINT ["yarn"]
+
+FROM ubuntu:22.04 as production
+
+ARG USER_ID
+ARG GROUP_ID
+
+RUN groupadd -g ${GROUP_ID} ekf
+RUN useradd -m -G www-data -u ${USER_ID} -g ${GROUP_ID} ekf
+RUN usermod -a -G root ekf
+
+RUN apt-get update && apt -y install curl gcc g++ make python3 && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+USER ekf
+
+WORKDIR /home/ekf
+ENV NODE_VERSION=20.15.0
+ENV NVM_DIR=/home/ekf/.nvm
+ENV PATH="/home/ekf/.nvm/versions/node/v${NODE_VERSION}/bin/:${PATH}"
+COPY --chown=ekf:ekf ./build/node_install.sh ./
+
+RUN chmod +x ./node_install.sh
+RUN ./node_install.sh
+
+WORKDIR /usr/src/app
+COPY --chown=ekf:ekf --from=build /usr/src/app/.nuxt ./.nuxt
+COPY --chown=ekf:ekf --from=build /usr/src/app/static ./static
+COPY --chown=ekf:ekf --from=build /usr/src/app/config ./config
+
+COPY --chown=ekf:ekf --from=build /usr/src/app/package.json /usr/src/app/yarn.lock /usr/src/app/nuxt.config.js /usr/src/app/.env ./
+RUN yarn install && yarn cache clean
+ENV HOST=0.0.0.0
+ENV PORT=8009
+
+EXPOSE 8009
+ENTRYPOINT ["yarn"]

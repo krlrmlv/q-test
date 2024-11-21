@@ -1,0 +1,82 @@
+#import "@/graphql/fragments/CatalogCategoryFileFragment"
+fragment CatalogCategoryFilesFragment on ekfgroup_catalog_categories {
+  accessories: parameters(
+    where: {
+      information_tag: { _eq: "standard_equipment" }
+      text: { _is_null: false }
+    }
+  ) {
+    text
+  }
+
+  advantages: files(
+    where: {
+      file_type_id: {
+        _in: [
+          "5038bbc0-5390-11e7-80cc-0cc47a0cbffe"
+          "bfdce185-538f-11e7-80cc-0cc47a0cbffe"
+        ]
+      }
+    }
+    order_by: [{ sort_order: asc }, { file_type_id: asc }, { name: asc }]
+  ) {
+    ...CatalogCategoryFileFragment
+  }
+
+  descriptions: files(
+    where: { file_type_id: { _eq: "bfdce185-538f-11e7-80cc-0cc47a0cbffe" } }
+  ) {
+    ...CatalogCategoryFileFragment
+  }
+
+  documents: files(
+    order_by: { file_type: { sort_order: asc } }
+    where: {
+      file_type_id: {
+        _in: [
+          "373e91f9-64c9-11e8-a1fa-00155d00711b"
+          "aaa3753c-688f-11e8-a1fa-00155d00711b"
+          "f79f43ce-5fd0-11e6-b98c-000c29c6d5f2"
+          "14493015-85a8-11e6-9dda-000c29c6d5f2"
+          "77527d49-735f-11e6-971e-000c29c6d5f2"
+          "f79f43d3-5fd0-11e6-b98c-000c29c6d5f2"
+          "f79f43d1-5fd0-11e6-b98c-000c29c6d5f2"
+          "f79f43d4-5fd0-11e6-b98c-000c29c6d5f2"
+          "f79f43d5-5fd0-11e6-b98c-000c29c6d5f2"
+          "aa11a788-73f7-11e6-971e-000c29c6d5f2"
+          "8585a500-704f-11e6-971e-000c29c6d5f2" # sd-28408 # download_file
+          "2cec8893-2a8f-11ec-a21d-00155d007700" # sd-28408 # IES file
+          "e4694427-f2ab-11ea-a219-00155dfa1116" # sd-28408 # Application file
+          # "1474381f-31c1-11ee-a227-00155d29f504" # Datasheet
+        ]
+      }
+    }
+  ) {
+    ...CatalogCategoryFileFragment
+  }
+
+  specifications: files(
+    where: { file_type_id: { _eq: "993d6733-73f7-11e6-971e-000c29c6d5f2" } }
+  ) {
+    ...CatalogCategoryFileFragment
+  }
+
+  usages: parameters(
+    where: {
+      information_tag: { _eq: "usage_field" }
+      text: { _is_null: false }
+    }
+  ) {
+    text
+  }
+
+  videos: parameters(
+    where: {
+      information_tag: { _eq: "group_description_video" }
+      text: { _is_null: false }
+    }
+    order_by: { sort_order: asc }
+  ) {
+    text
+  }
+}

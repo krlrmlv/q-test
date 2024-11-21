@@ -1,0 +1,10 @@
+fragment CatalogMenuCategoryFragment on ekfgroup_catalog_categories {
+  id
+  image
+  name
+  parent_id
+  pdf
+  slug
+  sort_order
+  created_at
+}

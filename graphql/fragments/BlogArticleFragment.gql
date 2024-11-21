@@ -1,0 +1,13 @@
+fragment BlogArticleFragment on ekfgroup_catalog_articles {
+  id
+  color
+  featured
+  meta_description
+  meta_keywords
+  preview_image
+  published_at
+  short_text
+  slug
+  text
+  title
+}

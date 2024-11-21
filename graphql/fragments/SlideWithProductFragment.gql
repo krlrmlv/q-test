@@ -1,0 +1,8 @@
+#import "@/graphql/fragments/CatalogProductFragment"
+#import "@/graphql/fragments/SlideFragment"
+fragment SlideWithProductFragment on ekfgroup_catalog_slides {
+  ...SlideFragment
+  product {
+    ...CatalogProductFragment
+  }
+}

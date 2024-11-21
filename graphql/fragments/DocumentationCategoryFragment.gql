@@ -1,0 +1,4 @@
+fragment DocumentationCategoryFragment on ekfgroup_catalog_categories {
+  name
+  slug
+}

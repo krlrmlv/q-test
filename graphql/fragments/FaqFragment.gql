@@ -1,0 +1,5 @@
+fragment FaqFragment on ekfgroup_catalog_faqs {
+  id
+  answer
+  question
+}

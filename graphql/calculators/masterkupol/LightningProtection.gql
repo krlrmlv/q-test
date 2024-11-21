@@ -1,0 +1,84 @@
+mutation LightningProtection(
+  $additional_chimney_conductors: Int
+  $additional_conductors: Int
+  $chimneys_material: String
+  $chimneys_quantity: Int
+  $coord_x: Int
+  $coord_y: Int
+  $conductor_type: String
+  $constructions_quantity: Int
+  $drainpipes_diameter: Int
+  $drainpipes_material: String
+  $electrode_type: String
+  $ground_type: String
+  $has_chimneys: Boolean
+  $has_drainpipes: Boolean
+  $has_other: Boolean
+  $height: Int!
+  $length: Int!
+  $length2: Int
+  $mounting_method: String
+  $pitch_angle: Int
+  $protection_category: Int
+  $protection_method: String
+  $reliability: Float
+  $resistance: Int
+  $rod_type: String
+  $roof_material: String
+  $roof_type: String
+  $wall_material: String
+  $width: Int!
+  $zone: String!
+  $lightning_rod_height: Int!
+) {
+  ekfgroup_lightning_protection_calculate(
+    length: $length
+    width: $width
+    zone: $zone
+    additional_chimney_conductors: $additional_chimney_conductors
+    additional_conductors: $additional_conductors
+    chimneys_quantity: $chimneys_quantity
+    constructions_quantity: $constructions_quantity
+    chimneys_material: $chimneys_material
+    conductor_type: $conductor_type
+    coord_x: $coord_x
+    coord_y: $coord_y
+    drainpipes_diameter: $drainpipes_diameter
+    drainpipes_material: $drainpipes_material
+    electrode_type: $electrode_type
+    ground_type: $ground_type
+    has_chimneys: $has_chimneys
+    has_drainpipes: $has_drainpipes
+    has_other: $has_other
+    height: $height
+    length2: $length2
+    mounting_method: $mounting_method
+    pitch_angle: $pitch_angle
+    protection_category: $protection_category
+    protection_method: $protection_method
+    reliability: $reliability
+    resistance: $resistance
+    rod_type: $rod_type
+    roof_material: $roof_material
+    roof_type: $roof_type
+    wall_material: $wall_material
+    lightning_rod_height: $lightning_rod_height
+  ) {
+    vendor_code
+    qty
+    group
+    product_id
+    product {
+      catalog_products(
+        where: { language_id: { _eq: "ebf75f1c-dca9-11ea-a219-00155dfa1116" } }
+      ) {
+        name
+        image
+        slug
+        unit_storage {
+          name
+        }
+      }
+    }
+  }
+}

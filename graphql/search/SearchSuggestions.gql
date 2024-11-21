@@ -1,0 +1,38 @@
+#import "@/graphql/fragments/SearchDropdownProductFragment"
+#import "@/graphql/fragments/SearchDropdownCategoryFragment"
+#import "@/graphql/fragments/CatalogCategoryBreadcrumbFragment"
+query SearchSuggestions(
+  $category_query: String = ""
+  $locale: String!
+  $page_url: String = ""
+  $q: String
+  $user_ip: inet = ""
+) {
+  products: ekfgroup_catalog_search(
+    args: { q: $q, page_url: $page_url, user_ip: $user_ip }
+    limit: 7
+    where: { language: { code: { _eq: $locale } }, show_by_link: { _eq: true } }
+  ) {
+    ...SearchDropdownProductFragment
+  }
+
+  categories: ekfgroup_catalog_categories(
+    limit: 3
+    order_by: { popularity: desc }
+    where: {
+      active: { _eq: true }
+      language: { code: { _eq: $locale } }
+      name: { _ilike: $category_query }
+    }
+  ) {
+    ...SearchDropdownCategoryFragment
+
+    parent {
+      ...CatalogCategoryBreadcrumbFragment
+    }
+
+    root {
+      ...CatalogCategoryBreadcrumbFragment
+    }
+  }
+}

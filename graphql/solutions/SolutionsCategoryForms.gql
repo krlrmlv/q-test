@@ -1,0 +1,15 @@
+query SolutionsCategoryForms($category_id: bigint!, $locale: String!) {
+  categoryForms: ekfgroup_solutions_category_form(
+    where: {
+      category_id: { _eq: $category_id }
+      languages: { language: { code: { _eq: $locale } } }
+    }
+  ) {
+    category_id
+    form_id
+    languages {
+      description_form
+      title_form
+    }
+  }
+}

@@ -1,0 +1,4 @@
+fragment CatalogProductPropertyUnitFragment on ekfgroup_catalog_property_units {
+  id
+  name
+}

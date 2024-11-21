@@ -1,0 +1,89 @@
+#import "@/graphql/fragments/SolutionsCategoryFragment"
+#import "@/graphql/fragments/NewsArticleFragment"
+#import "@/graphql/fragments/SolutionsFormFragment"
+#import "@/graphql/fragments/SolutionsHelpFragment"
+#import "@/graphql/fragments/SlideFragment"
+#import "@/graphql/fragments/NewsArticleFragment"
+
+query ViewIndustry(
+  $limit: Int
+  $locale: String!
+  $slugs: [String]
+  $newsIds: [bigint!]
+  $projectsIds: [bigint!]
+) {
+  catalogCategories: ekfgroup_catalog_categories(
+    where: {
+      active: { _eq: true }
+      language: { code: { _eq: $locale } }
+      slug: { _in: $slugs }
+    }
+  ) {
+    name
+    slug
+    meta_h1
+  }
+
+  solutionCategories: ekfgroup_catalog_solutions_categories(
+    limit: $limit
+    order_by: [{ sort_order: asc }, { name: asc }]
+    where: { language: { code: { _eq: $locale } } }
+  ) {
+    ...SolutionsCategoryFragment
+  }
+
+  projects: ekfgroup_catalog_article_categories(
+    where: { language: { code: { _eq: $locale } }, slug: { _eq: "projects" } }
+  ) {
+    slug
+    name
+    articles(
+      limit: 4
+      order_by: { published_at: desc }
+      where: { id: { _in: $projectsIds } }
+    ) {
+      ...NewsArticleFragment
+    }
+  }
+
+  forms: ekfgroup_catalog_solutions_forms(order_by: [{ id: asc }]) {
+    ...SolutionsFormFragment
+  }
+
+  help: ekfgroup_catalog_solutions_help(
+    order_by: [{ sort_order: asc }, { name: asc }]
+    where: { active: { _eq: true }, language: { code: { _eq: $locale } } }
+  ) {
+    ...SolutionsHelpFragment
+  }
+
+  courses: ekfgroup_catalog_slides(
+    limit: 3
+    order_by: { sort_order: asc }
+    where: {
+      language: { code: { _eq: $locale } }
+      slider: { name: { _eq: "univer" }, layout: { slug: { _eq: "industry" } } }
+    }
+  ) {
+    ...SlideFragment
+  }
+
+  news: ekfgroup_catalog_article_categories(
+    order_by: { id: asc }
+    where: {
+      language: { code: { _eq: $locale } }
+      parent: { slug: { _eq: "news" } }
+    }
+  ) {
+    name
+    slug
+
+    articles(
+      limit: 4
+      order_by: { published_at: desc }
+      where: { id: { _in: $newsIds } }
+    ) {
+      ...NewsArticleFragment
+    }
+  }
+}

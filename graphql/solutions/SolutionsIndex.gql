@@ -1,0 +1,41 @@
+#import "@/graphql/fragments/SolutionsMainBannerFragment"
+#import "@/graphql/fragments/SolutionsCategoryFragment"
+#import "@/graphql/fragments/SolutionsFormFragment"
+#import "@/graphql/fragments/SolutionsScopeFragment"
+#import "@/graphql/fragments/SolutionsHelpFragment"
+query SolutionsIndex($limit: Int, $locale: String!) {
+  banners: ekfgroup_catalog_solutions_main_banners(
+    limit: 1
+    order_by: [{ id: asc }]
+    where: { active: { _eq: true }, language: { code: { _eq: $locale } } }
+  ) {
+    ...SolutionsMainBannerFragment
+  }
+
+  categories: ekfgroup_catalog_solutions_categories(
+    limit: $limit
+    order_by: [{ sort_order: asc }, { name: asc }]
+    where: { language: { code: { _eq: $locale } } }
+  ) {
+    ...SolutionsCategoryFragment
+  }
+
+  forms: ekfgroup_catalog_solutions_forms(order_by: [{ id: asc }]) {
+    ...SolutionsFormFragment
+  }
+
+  help: ekfgroup_catalog_solutions_help(
+    order_by: [{ sort_order: asc }, { name: asc }]
+    where: { active: { _eq: true }, language: { code: { _eq: $locale } } }
+  ) {
+    ...SolutionsHelpFragment
+  }
+
+  scopes: ekfgroup_catalog_solutions_category_scopes(
+    distinct_on: [sort_order, id]
+    order_by: [{ sort_order: asc }, { id: asc }]
+    where: { active: { _eq: true }, language: { code: { _eq: $locale } } }
+  ) {
+    ...SolutionsScopeFragment
+  }
+}

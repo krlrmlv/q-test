@@ -1,0 +1,35 @@
+fragment CatalogProductLogisticParametrsFragment on ekfgroup_catalog_products {
+  unit_storage {
+    barcode
+    coefficient
+    depth
+    height
+    name
+    volume
+    weight
+    width
+    full_name
+  }
+  unit_transport_packaging {
+    barcode
+    coefficient
+    depth
+    height
+    weight
+    volume
+    width
+    name
+    full_name
+  }
+  unit_group_packing {
+    coefficient
+    barcode
+    depth
+    height
+    name
+    volume
+    weight
+    width
+    full_name
+  }
+}

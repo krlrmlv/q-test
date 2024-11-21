@@ -1,0 +1,5 @@
+mutation CartUpsertSolution($cartId: String!, $solutionId: Int!) {
+  ekfgroup_cart_add_solution(cart_id: $cartId, solution_id: $solutionId) {
+    ok
+  }
+}

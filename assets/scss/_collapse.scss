@@ -1,0 +1,12 @@
+.collapse-toggle {
+  .icon-caret {
+    transform: rotate(0);
+    transition: $transition-base;
+  }
+
+  &.not-collapsed {
+    .icon-caret {
+      transform: rotate(-180deg);
+    }
+  }
+}

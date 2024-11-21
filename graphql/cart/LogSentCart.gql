@@ -1,0 +1,8 @@
+mutation LogSentCart($objects: [ekfgroup_sent_carts_insert_input!]!) {
+  sent_cart: insert_ekfgroup_sent_carts(objects: $objects) {
+    affected_rows
+    returning {
+      id
+    }
+  }
+}

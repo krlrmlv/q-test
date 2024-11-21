@@ -1,0 +1,27 @@
+mutation MyMutation(
+  $drainpipes: EkfgroupDrainpipesInput
+  $gutter: EkfgroupGutterInput
+  $valley: EkfgroupValleyInput
+) {
+  ekfgroup_master_roof_calculate(
+    drainpipes: $drainpipes
+    gutter: $gutter
+    valley: $valley
+  ) {
+    qty
+    qty_not_rounded
+    vendor_code
+    product {
+      id
+      name
+      vendor_code
+      slug
+      catalog_products {
+        image
+        unit_storage {
+          name
+        }
+      }
+    }
+  }
+}

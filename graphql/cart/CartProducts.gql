@@ -1,0 +1,21 @@
+#import "@/graphql/fragments/CartProductFragment"
+query CartProducts($cartId: String!, $locale: String) {
+  cart: ekfgroup_cart(
+    where: { cart_id: { _eq: $cartId } }
+    order_by: { solution: asc }
+  ) {
+    quantity
+    solution
+    catalog_product(where: { language: { code: { _eq: $locale } } }) {
+      ...CartProductFragment
+    }
+  }
+
+  cartRows: ekfgroup_cart_aggregate(where: { cart_id: { _eq: $cartId } }) {
+    aggregate {
+      sum {
+        quantity
+      }
+    }
+  }
+}

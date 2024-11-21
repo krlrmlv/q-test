@@ -1,0 +1,13 @@
+#import "@/graphql/fragments/ContactFragment"
+query Contacts($locale: String) {
+  contacts: ekfgroup_catalog_contacts(
+    where: { language: { code: { _eq: $locale } } }
+    order_by: [{ sort_order: asc }, { id: asc }]
+  ) {
+    ...ContactFragment
+
+    settlement {
+      fias_id
+    }
+  }
+}

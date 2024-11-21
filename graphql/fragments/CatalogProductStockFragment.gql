@@ -1,0 +1,15 @@
+fragment CatalogProductStockFragment on ekfgroup_partner_actual_stocks {
+  address
+  date
+  quantity
+  partner_id
+
+  partner {
+    id
+    name
+    phone
+    short_name
+    commercial_name
+    site_url
+  }
+}

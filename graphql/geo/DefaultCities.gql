@@ -1,0 +1,7 @@
+#import "@/graphql/fragments/LocationCityFragment"
+
+query DefaultCities($fias_ids: [String!] = []) {
+  default_cities: cities(where: { fias_id: { _in: $fias_ids } }) {
+    ...LocationCityFragment
+  }
+}

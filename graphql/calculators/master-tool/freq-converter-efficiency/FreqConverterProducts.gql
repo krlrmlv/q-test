@@ -1,0 +1,12 @@
+query FreqConverterProducts($locale: String!) {
+  options: ekfgroup_mastertool_freq_converter_products(
+    order_by: [{ power_supply: asc_nulls_last }, { power: asc_nulls_last }]
+    where: { language: { code: { _eq: $locale } } }
+  ) {
+    amperage
+    power
+    power_supply
+    product_id
+    text
+  }
+}

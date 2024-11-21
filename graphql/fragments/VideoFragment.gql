@@ -1,0 +1,6 @@
+fragment VideoFragment on ekfgroup_catalog_videos {
+  id
+  image
+  title
+  url
+}

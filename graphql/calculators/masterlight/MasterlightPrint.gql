@@ -1,0 +1,31 @@
+mutation MasterlightPrint(
+  $room_length: Float!
+  $room_width: Float!
+  $room_height: Float!
+  $work_area_height: Float!
+  $room_type: String!
+  $room_category: String!
+  $room_reflection_factors: String!
+  $product_name: String!
+  $product_vendor_code: String!
+  $product_image: String!
+  $products_count: Int!
+  $average_illumination: Int!
+) {
+  masterlight_print: ekfgroup_masterlight_print(
+  room_length: $room_length
+  room_width: $room_width
+  room_height: $room_height
+  work_area_height: $work_area_height
+  room_type: $room_type
+  room_category: $room_category
+  room_reflection_factors: $room_reflection_factors
+  product_name: $product_name
+  product_vendor_code: $product_vendor_code
+  product_image: $product_image
+  products_count: $products_count
+  average_illumination: $average_illumination
+  ) {
+    path
+  }
+}

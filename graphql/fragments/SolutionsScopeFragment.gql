@@ -1,0 +1,8 @@
+fragment SolutionsScopeFragment on ekfgroup_catalog_solutions_category_scopes {
+  application: sub_title
+  categories_description
+  description
+  image
+  name
+  slug: id
+}

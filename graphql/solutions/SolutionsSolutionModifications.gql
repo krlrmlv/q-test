@@ -1,0 +1,26 @@
+#import "@/graphql/fragments/SolutionsSolutionModificationFragment"
+query SolutionsSolutionModifications(
+  $limit: Int = 8
+  $locale: String!
+  $offset: Int = 8
+  $slug: String!
+) {
+  solutions: ekfgroup_catalog_solutions_solutions(
+    limit: 1
+    where: { language: { code: { _eq: $locale } }, slug: { _eq: $slug } }
+  ) {
+    modifications(
+      limit: $limit
+      offset: $offset
+      order_by: [
+        { modification: { sort_order: asc } }
+        { modification: { name: asc } }
+      ]
+      where: { modification: {} }
+    ) {
+      modification {
+        ...SolutionsSolutionModificationFragment
+      }
+    }
+  }
+}

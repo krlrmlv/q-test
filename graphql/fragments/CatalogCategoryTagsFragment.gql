@@ -1,0 +1,9 @@
+fragment CatalogCategoryTagsFragment on ekfgroup_catalog_categories {
+  tag_groups(order_by: { sort_order: asc }, where: { tags: {} }) {
+    name
+    tags(order_by: { sort_order: asc }) {
+      name
+      link
+    }
+  }
+}

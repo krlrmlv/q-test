@@ -1,0 +1,7 @@
+query MasterlightRoomSafetyFactors($locale: String!) {
+  room_safety_factors: ekfgroup_masterlight_room_safety_factors(where: { language: { code: { _eq: $locale } } }) {
+    id
+    name
+    safety_factor
+  }
+}

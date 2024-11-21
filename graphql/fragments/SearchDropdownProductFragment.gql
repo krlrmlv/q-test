@@ -1,0 +1,10 @@
+fragment SearchDropdownProductFragment on ekfgroup_catalog_products {
+  id
+  name
+  slug
+  series
+  vendor_code
+  price
+  price_base
+  created_at
+}

@@ -1,0 +1,10 @@
+query PartnerCities($where: ekfgroup_partner_seller_points_bool_exp! = {}) {
+  cities: ekfgroup_partner_seller_points(
+    distinct_on: city
+    order_by: { city: asc }
+    where: $where
+  ) {
+    name: city
+    region
+  }
+}

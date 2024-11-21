@@ -1,0 +1,9 @@
+query CatalogBreadcrumbs($locale: String, $category_id: bigint) {
+  breadcrumbs: ekfgroup_catalog_breadcrumbs(
+    args: { category_id: $category_id, language: $locale }
+  ) {
+    id
+    name
+    slug
+  }
+}

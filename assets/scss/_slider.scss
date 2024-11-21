@@ -1,0 +1,81 @@
+.slider-wrapper {
+  overflow: hidden;
+}
+
+.swiper-container {
+  transition: $transition-base;
+  transition-property: opacity;
+
+  &:not(.swiper-container-initialized) {
+    opacity: 0;
+  }
+}
+
+.swiper-container-horizontal {
+  & > .swiper-pagination-bullets {
+    transform: none;
+
+    &.swiper-pagination-bullets-dynamic {
+      display: block;
+      margin: 0 auto;
+      padding-top: 0.4375rem;
+      padding-bottom: 0.4375rem;
+      transform: none;
+    }
+  }
+}
+
+.swiper-pagination {
+  position: static;
+
+  .swiper-pagination-bullet {
+    width: 0.625rem;
+    height: 0.625rem;
+    border: 2px solid $secondary;
+    background-color: transparent;
+    opacity: 1;
+    transform: scale(1);
+    transition: $transition-base;
+    transition-property: transform, background-color;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: $secondary;
+    transform: scale(1.4);
+  }
+}
+
+.swiper-navigation {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+
+  .btn {
+    padding: 0;
+    border: none;
+    color: $secondary;
+
+    & + .btn {
+      margin-left: 0.5rem;
+    }
+
+    @include hover() {
+      color: darken($secondary, 7.5%);
+    }
+
+    &:focus,
+    &.focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled).active,
+    .show > &.dropdown-toggle {
+      color: darken($secondary, 7.5%);
+      box-shadow: none;
+    }
+  }
+}

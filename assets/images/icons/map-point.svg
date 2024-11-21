@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="45" viewBox="0 0 48 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.7" filter="url(#filter0_f_105_39)">
+<path d="M17.4355 43.8388L23.9288 13.2418L46.7331 32.8848L17.4355 43.8388Z" fill="url(#paint0_linear_105_39)"/>
+</g>
+<path d="M17.4739 43.9766C11.6328 39.0697 7.26014 34.5138 4.35607 30.3088C1.45202 26.1038 0 22.222 0 18.6636C0 13.2712 1.75523 8.97528 5.2657 5.7758C8.77617 2.57631 12.8414 0.976562 17.4615 0.976562C22.0815 0.976562 26.1595 2.57787 29.6957 5.78048C33.2319 8.98308 35 13.2832 35 18.6809C35 22.2319 33.5393 26.1092 30.6178 30.313C27.6964 34.5167 23.3151 39.0712 17.4739 43.9766Z" fill="#DB0812"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20.1913 9.59375C18.8 12.9097 17.2696 16.3184 13.2116 21.5126L13.0029 21.3039C15.8087 16.5503 16.2029 12.6314 16.4812 9.59375H20.1913Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.3977 19.4488C13.3977 19.4488 13.4209 13.4198 10.9629 9.59375H14.2325C14.4412 12.5155 14.5571 15.901 13.3977 19.4488Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26.4063 21.6748V24.9444C23.6237 22.6719 16.5049 22.5328 16.5049 22.5328H16.5281C20.0991 21.3734 23.4614 21.4893 26.4063 21.6748Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M26.4059 15.7847V19.4948C23.3682 19.7499 19.4262 20.1673 14.6726 22.9499L14.4639 22.7412C19.6813 18.7064 23.09 17.176 26.4059 15.7847Z" fill="white"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M22.7889 9.59375C19.5657 15.8778 12.957 22.5329 8.55124 27.1706C8.45849 27.2633 8.41211 27.4024 8.41211 27.5416C8.55124 27.5416 8.69037 27.4952 8.78312 27.4024C13.444 23.0198 20.0991 16.4343 26.4063 13.188V9.59375H22.7889Z" fill="white"/>
+<defs>
+<filter id="filter0_f_105_39" x="16.4355" y="12.2417" width="31.2979" height="32.5972" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="0.5" result="effect1_foregroundBlur_105_39"/>
+</filter>
+<linearGradient id="paint0_linear_105_39" x1="17.4355" y1="43.8388" x2="41.2961" y2="16.1382" gradientUnits="userSpaceOnUse">
+<stop stop-opacity="0.8"/>
+<stop offset="0.463542" stop-opacity="0.12459"/>
+<stop offset="0.635417" stop-opacity="0"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,41 @@
+#import "@/graphql/fragments/DocumentationSearchItemFragment"
+query SearchDocumentation($locale: String!, $query: String!) {
+  results: ekfgroup_catalog_products(
+    order_by: { name: asc }
+    where: {
+      language: { code: { _eq: $locale } }
+      _or: [{ name: { _ilike: $query } }, { vendor_code: { _ilike: $query } }]
+      files: {
+        file_type_id: {
+          _in: [
+            "373e91f9-64c9-11e8-a1fa-00155d00711b" # 3D Model
+            "e4694427-f2ab-11ea-a219-00155dfa1116" # Application file
+            "aaa3753c-688f-11e8-a1fa-00155d00711b" # Booklet
+            "f79f43d4-5fd0-11e6-b98c-000c29c6d5f2" # Certificate
+            "bfdce185-538f-11e7-80cc-0cc47a0cbffe" # Description
+            "69ceaacc-73f7-11e6-971e-000c29c6d5f2" # Description and features
+            "f79f43ce-5fd0-11e6-b98c-000c29c6d5f2" # Documentation
+            "f79f43d5-5fd0-11e6-b98c-000c29c6d5f2" # Drawing
+            "8585a500-704f-11e6-971e-000c29c6d5f2" # File for download
+            "f79f43d1-5fd0-11e6-b98c-000c29c6d5f2" # Instruction
+            "2cec8893-2a8f-11ec-a21d-00155d007700" # IES file
+            "badfd70a-5784-11ee-a227-00155d29f504" # Manual
+            "77527d49-735f-11e6-971e-000c29c6d5f2" # Master catalog
+            "f79f43d3-5fd0-11e6-b98c-000c29c6d5f2" # Passport
+            "a0ac8ef0-5784-11ee-a227-00155d29f504" # Patent
+            "a0ac8eb9-5784-11ee-a227-00155d29f504" # Presentations
+            "badfd7b5-5784-11ee-a227-00155d29f504" # Proof
+            "31194e01-5785-11ee-a227-00155d29f504" # Questionnaire
+            "b3fd1ce1-5784-11ee-a227-00155d29f504" # Rejection letter
+            "aa11a788-73f7-11e6-971e-000c29c6d5f2" # Standard configuration
+            "ad4c9135-704f-11e6-971e-000c29c6d5f2" # Table
+            "993d6733-73f7-11e6-971e-000c29c6d5f2" # Технические характеристики
+            "1c34d019-6893-11e8-a1fa-00155d00711b" # Референс
+          ]
+        }
+      }
+    }
+  ) {
+    ...DocumentationSearchItemFragment
+  }
+}

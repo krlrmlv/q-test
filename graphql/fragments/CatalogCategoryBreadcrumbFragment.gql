@@ -1,0 +1,5 @@
+fragment CatalogCategoryBreadcrumbFragment on ekfgroup_catalog_categories {
+  id
+  name
+  slug
+}

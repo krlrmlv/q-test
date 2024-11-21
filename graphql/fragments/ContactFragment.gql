@@ -1,0 +1,10 @@
+fragment ContactFragment on ekfgroup_catalog_contacts {
+  address
+  description
+  id
+  location
+  phone
+  settlement_id
+  title
+  sort_order
+}

@@ -1,0 +1,32 @@
+#import "@/graphql/fragments/NewsArticleFragment"
+query HomeNews(
+  $limit: Int = 3
+  $locale: String!
+  $show_featured: Boolean = false
+) {
+  articles: ekfgroup_catalog_articles(
+    limit: $limit
+    order_by: { published_at: desc_nulls_last }
+    where: {
+      category: { parent: { slug: { _eq: "news" } } }
+      featured: { _eq: $show_featured }
+      language: { code: { _eq: $locale } }
+    }
+  ) {
+    ...NewsArticleFragment
+  }
+
+  featured: ekfgroup_catalog_articles(
+    limit: 1
+    order_by: { published_at: desc_nulls_last }
+    where: {
+      category: { parent: { slug: { _eq: "news" } } }
+      featured: { _eq: true }
+      language: { code: { _eq: $locale } }
+    }
+  ) {
+    ...NewsArticleFragment
+
+    featured_image
+  }
+}

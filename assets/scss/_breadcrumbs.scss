@@ -1,0 +1,17 @@
+@import '~bootstrap/scss/breadcrumb';
+
+.breadcrumb-item {
+  a {
+    color: $secondary;
+  }
+}
+
+.light-breadcrumbs {
+  .breadcrumb-item {
+    a,
+    span,
+    &::before {
+      color: $white;
+    }
+  }
+}

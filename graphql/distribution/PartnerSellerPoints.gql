@@ -1,0 +1,16 @@
+#import "@/graphql/fragments/PartnerSellerPoint"
+query PartnerSellerPoints(
+  $limit: Int
+  $offset: Int
+  $order_by: [ekfgroup_partner_seller_points_order_by!]
+  $where: ekfgroup_partner_seller_points_bool_exp = {}
+) {
+  points: ekfgroup_partner_seller_points(
+    limit: $limit
+    offset: $offset
+    order_by: { sales: desc }
+    where: { _and: [$where, { geo_coords: { _is_null: false } }] }
+  ) {
+    ...PartnerSellerPoint
+  }
+}

@@ -1,0 +1,14 @@
+#import "@/graphql/fragments/SolutionsCategoryFragment"
+query SolutionsCategories(
+  $limit: Int
+  $locale: String!
+  $where: ekfgroup_catalog_solutions_categories_bool_exp = {}
+) {
+  categories: ekfgroup_catalog_solutions_categories(
+    limit: $limit
+    order_by: [{ sort_order: asc }, { name: asc }]
+    where: { _and: [$where, { language: { code: { _eq: $locale } } }] }
+  ) {
+    ...SolutionsCategoryFragment
+  }
+}

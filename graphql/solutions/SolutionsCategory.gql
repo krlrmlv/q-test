@@ -1,0 +1,68 @@
+#import "@/graphql/fragments/SolutionsCategorySolutionFragment"
+#import "@/graphql/fragments/SolutionsFormFragment"
+#import "@/graphql/fragments/SolutionsScopeFragment"
+query SolutionsCategory($locale: String!, $slug: String!) {
+  categories: ekfgroup_catalog_solutions_categories(
+    where: { language: { code: { _eq: $locale } }, slug: { _eq: $slug } }
+  ) {
+    advantages(where: { advantage: { active: { _eq: true } } }) {
+      advantage {
+        description: text
+        title
+      }
+    }
+
+    banner_image
+
+    description
+    id
+    image
+
+    meta_description
+    meta_title
+    metrika_goal
+    name
+
+    form_code
+
+    results {
+      title
+      values(
+        order_by: [
+          # TODO - commented for dev-hasura
+          #  { sort_order: asc },
+          { text: asc }
+        ]
+      ) {
+        icon
+        text
+      }
+    }
+
+    scopes(order_by: { id: asc }, where: { active: { _eq: true } }) {
+      ...SolutionsScopeFragment
+    }
+
+    solutions(
+      limit: 8
+      order_by: [{ solution: { sort_order: asc } }, { solution: { name: asc } }]
+      where: { solution: {} }
+    ) {
+      solution {
+        ...SolutionsCategorySolutionFragment
+      }
+    }
+
+    solutions_aggregate(where: { solution: {} }) {
+      aggregate {
+        count
+      }
+    }
+
+    solutions_text
+  }
+
+  forms: ekfgroup_catalog_solutions_forms(order_by: [{ id: asc }]) {
+    ...SolutionsFormFragment
+  }
+}

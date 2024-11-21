@@ -1,0 +1,33 @@
+@import '~bootstrap/scss/grid';
+
+@for $max-columns from 1 through 12 {
+  .row-cols-#{$max-columns} {
+    @for $count from 1 through $max-columns {
+      & > .col-#{$count} {
+        flex: 0 0 math.div($count * 100%, $max-columns);
+        max-width: math.div($count * 100%, $max-columns);
+      }
+
+      & > .offset-#{$count} {
+        margin-left: math.div($count * 100%, $max-columns);
+      }
+    }
+  }
+
+  @each $breakpoint, $max-width in $grid-breakpoints {
+    .row-cols-#{$breakpoint}-#{$max-columns} {
+      @for $count from 1 through $max-columns {
+        @include media-breakpoint-up($breakpoint) {
+          & > .col-#{$breakpoint}-#{$count} {
+            flex: 0 0 math.div($count * 100%, $max-columns);
+            max-width: math.div($count * 100%, $max-columns);
+          }
+
+          & > .offset-#{$breakpoint}-#{$count} {
+            margin-left: math.div($count * 100%, $max-columns);
+          }
+        }
+      }
+    }
+  }
+}

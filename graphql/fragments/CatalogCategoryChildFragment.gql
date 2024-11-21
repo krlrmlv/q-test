@@ -1,0 +1,11 @@
+fragment CatalogCategoryChildFragment on ekfgroup_catalog_categories {
+  id
+  image
+  link
+  name
+  parent_id
+  price_min
+  slug
+  sort_order
+  created_at
+}

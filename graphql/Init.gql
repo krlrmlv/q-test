@@ -1,0 +1,14 @@
+#import "@/graphql/fragments/LanguageFragment"
+#import "@/graphql/fragments/LayoutFragment"
+query Init($locale: String) {
+  languages: ekfgroup_languages {
+    ...LanguageFragment
+  }
+
+  layouts: ekfgroup_catalog_layouts(
+    where: { language: { code: { _eq: $locale } } }
+    order_by: { sort_order: asc }
+  ) {
+    ...LayoutFragment
+  }
+}

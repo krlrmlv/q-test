@@ -1,0 +1,10 @@
+fragment SolutionsMainBannerFragment on ekfgroup_catalog_solutions_main_banners {
+  advantages {
+    advantage {
+      text
+      value: title
+    }
+  }
+  image
+  title
+}

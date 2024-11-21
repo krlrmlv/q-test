@@ -1,0 +1,1450 @@
+{
+  "about": {
+    "articles": "Articles",
+    "career": "Career at EKF",
+    "company": "Company",
+    "contacts": "Contacts",
+    "esg": "ESG",
+    "fairPosition": "Fair position",
+    "news": "News",
+    "press": "Press",
+    "production": "Production",
+    "qms": "QMS",
+    "references": "Reference letters",
+    "title": "About us",
+    "video": "Video"
+  },
+  "apps": {
+    "appStore": {
+      "title": "Download on the App Store"
+    },
+    "googlePlay": {
+      "title": "Get it on Google Play"
+    },
+    "huaweiAppGallery": {
+      "title": "Download on the App Gallery"
+    }
+  },
+  "auth": {
+    "account": "Account",
+    "signIn": "Sign In",
+    "signOut": "Sign Out"
+  },
+  "blog": {
+    "allTags": "All tags",
+    "catalogLink": "View in catalog",
+    "commentDeclensions": "comment,comments,comments",
+    "imsLink": "View in IMS3",
+    "latest": "Latest",
+    "like": "Like",
+    "likes": "Likes",
+    "min": "min",
+    "popular": "Popular",
+    "showMore": "Show more",
+    "timeToRead": "Time to read",
+    "title": "Blog"
+  },
+  "calculators": {
+    "airTerminal": {
+      "title": "Calculation of protective air terminal zone"
+    },
+    "description": "Free calculators and configurators for the electrical industry",
+    "masterCad": {
+      "description": "Comprehensive service for the selection of ready-made GCC schemes in AutoCAD format and the formation of specifications for the project. The service is designed for design institutes, assemblers of low-voltage switchgear and installers who need access to design documentation.",
+      "schemes": {
+        "description": "Diagrams in .dwg format are drawn on the EKF element base and are accompanied by a specification and a recommended electrical panel for use",
+        "title": "Типовые схемы НКУ"
+      },
+      "subtitle": "Selection of a typical LVCD scheme",
+      "title": "MasterCAD"
+    },
+    "masterCost": {
+      "addNextVendorCode": "Add the vendor code, name (if exists) and price of a product from another manufacturer",
+      "addedToCart": "Products added to cart",
+      "analogsTable": "Analogs table",
+      "description": "Service for the selection of analogues of European and domestic brands for EKF products.",
+      "downloadTemplate": "Download table template",
+      "estimateDate": "Generated on",
+      "findAnalog": "Find analog",
+      "findAnalogs": "Find analogs",
+      "itemPrice": "Item price",
+      "infoMessage": "The specification contains irregular order items.<br />\nPlease contact the manager at 8 800 333-88-15 or write to 911@ekf.su to clarify order details.",
+      "labelCheck": "Check",
+      "labelCoefficient": "Min. leave rate",
+      "labelCount": "Count",
+      "labelNameEkf": "EKF name",
+      "labelPrice": "Price",
+      "labelPriceEkf": "EKF price",
+      "labelVendorCode": "Vendor code",
+      "labelVendorCodeEkf": "EKF vendor code",
+      "notFound": "No analog found",
+      "nothingToCart": "No products to add to cart",
+      "otherName": "Other manufacturer's product name",
+      "otherVendorCode": "Other manufacturer's vendor code",
+      "projectCostEkf": "Project cost on EKF equipment",
+      "projectCostEkfComment": "Calculated at base prices, ask distributors for final price",
+      "removeSelected": "Remove selected",
+      "searchFromFile": "Upload Excel file",
+      "searchFromList": "Upload list",
+      "searchManually": "Search manually",
+      "subtitle": "Select a search method: enter data manually, upload an Excel spreadsheet or upload a text list",
+      "tabCaption": "Selection of equipment analogues",
+      "templateFile": "mastercost-template-en.xlsx",
+      "title": "MasterCost",
+      "uploadFile": "Upload Excel file",
+      "uploadFileHint": "Upload list of products from other manufacturers in XLSX format (download a template if necessary)",
+      "vendorCodesList": "Insert a list with vendor codes, separated by spaces",
+      "youSave": "You save"
+    },
+    "masterHome": {
+      "description": "An easy-to-use service that allows you to select a complete set of a home panel and the necessary wiring accessories. To calculate the specification, it is enough to mark the parameters of the living quarters and electrical appliances.",
+      "title": "MasterHome"
+    },
+    "masterKupol": {
+      "addedToCart": "Products added to cart",
+      "calculate": "Calculate",
+      "cart": {
+        "fields": {
+          "name": "Name",
+          "photo": "Photo",
+          "quantity": "Quantity",
+          "vendorCode": "Vendor code"
+        },
+        "title": "Components"
+      },
+      "climateZones": {
+        "determineZone": "Determine climate zone",
+        "hideRegions": "Hide regions",
+        "placeholder": "Enter region",
+        "selectZone": "Select zone",
+        "showRegions": "Show regions",
+        "special": "Special",
+        "zone": "zone"
+      },
+      "description": "Service for calculation and selection of lightning protection and grounding elements for residential and public buildings",
+      "downloadPdf": "Download as PDF",
+      "estimateDate": "Generated on",
+      "form": {
+        "height": "Building height (H), m",
+        "length": "Building length (B), m",
+        "width": "Building width (A), m",
+        "zone": "Climate zone"
+      },
+      "goBack": "Go back",
+      "grid": {
+        "additionalChimneyConductors": "Lightning rod for brick chimney, pcs.",
+        "additionalConductors": "Additional bar lightning rods, pcs.",
+        "chimneys": {
+          "brick": "Brick",
+          "material": "Material",
+          "metal": "Metal",
+          "quantity": "Quantity",
+          "title": "There are protruding pipes, chimneys"
+        },
+        "conductorType": {
+          "d8": "Bar ⌀ 8 mm",
+          "title": "Type of down conductors"
+        },
+        "constructions": {
+          "quantity": "Quantity",
+          "title": "There are metal advertising structures, fences, stairs, antennas"
+        },
+        "description": "Choose the type of roof and enter the parameters for calculation",
+        "drainpipes": {
+          "diameter": "Diameter, mm",
+          "material": "Material",
+          "metal": "Metal",
+          "plastic": "Plastic",
+          "title": "There are drainpipes"
+        },
+        "mountingMethod": {
+          "above": "Above roofing",
+          "title": "Grid mounting method"
+        },
+        "pitchAngle": "Pitch angle",
+        "protectionCategory": {
+          "title": "Protection category",
+          "tooltip": {
+            "0": "Category I – buildings with the highest level of protection. These are production facilities with the presence of explosive zones of hazard classes B-I, II.",
+            "1": "Category II – buildings for production, storage purposes, open areas both with the storage of flammable liquids, combustible liquids, and with technological equipment installed on them; explosive industries, outdoor installations with a hazard class below B-Ia.",
+            "2": "Category III – construction objects for various purposes, residential and public buildings."
+          },
+          "warning": "The use of a lightning protection mesh is unacceptable for category 1, we recommend installing <u>a lightning rod</u>"
+        },
+        "roofMaterial": {
+          "galvanized": "Galvanized",
+          "seam": "Seam",
+          "soft": "Soft",
+          "tiling": "Tiling",
+          "title": "Roof material"
+        },
+        "title": "Lightning mesh",
+        "wallMaterial": {
+          "aeratedConcrete": "Aerated concrete",
+          "beam": "Beam, wood",
+          "brick": "Brick",
+          "concrete": "Concrete",
+          "sandwich": "Sandwich",
+          "title": "Wall material"
+        }
+      },
+      "grounding": {
+        "description": "Enter parameters for grounding calculation",
+        "electrodeType": {
+          "horizontal": "Modular pin grounding kits",
+          "title": "Electrode type",
+          "vertical": "Vertical corner 5*50*3000"
+        },
+        "groundType": {
+          "blackEarth": "Black earth",
+          "clay": "Clay",
+          "gardenLand": "Garden land",
+          "limestone": "Limestone, marl",
+          "loam": "Loam",
+          "rockyGround": "Rocky ground",
+          "sand": "Sand",
+          "sandyLoam": "Sandy loam",
+          "title": "Ground type",
+          "turf": "Turf"
+        },
+        "resistance": {
+          "title": "Required resistance, Ohm",
+          "tooltip": "If you do not know the exact value of the resistance, then take this value as 10 ohms."
+        },
+        "title": "Grounding"
+      },
+      "initialData": {
+        "description": "This configurator is a recommendation.<br />Calculation and design of lightning protection is carried out in accordance with SO 153-343.21.122.2003 and RD 34.21.122-87.",
+        "title": "Initial data"
+      },
+      "nextStep": "Next step",
+      "protectionMethod": {
+        "description": "Choose how you want to protect your building",
+        "title": "Lightning protection method"
+      },
+      "rod": {
+        "additionalChimneyConductors": "Lightning rod for brick chimney, pcs.",
+        "additionalConductors": "Additional bar lightning rods, pcs.",
+        "conductorType": {
+          "rod": "Rod",
+          "strip": "Strip",
+          "title": "Type of down conductors"
+        },
+        "description": "Select the type of lightning rods and enter the parameters for calculation",
+        "height": "Lightning rod height, m (<150)",
+        "placement": {
+          "length": "Building length",
+          "title": "Place of installation of the lightning rod",
+          "width": "Building width"
+        },
+        "protectionCategory": {
+          "title": "Protection category"
+        },
+        "reliability": {
+          "title": "Reliability of protection against DLS",
+          "tooltip": "The calculation uses the indicator \"Reliability of protection against DLS\" = 0.9",
+          "placeholder": "Choose the reliability of protection against DLS"
+        },
+        "title": "Lightning rods",
+        "wallMaterial": {
+          "aeratedConcrete": "Aerated concrete",
+          "beam": "Beam, wood",
+          "brick": "Brick",
+          "concrete": "Concrete",
+          "sandwich": "Sandwich",
+          "title": "Wall material"
+        }
+      },
+      "rodType": {
+        "freestanding": "Freestanding",
+        "placeholder": "Choose the type of lightning rods",
+        "ridge": "Ridge mounted",
+        "title": "Type of lightning rods",
+        "wall": "Wall mounted"
+      },
+      "roofType": {
+        "flat": "Flat roof",
+        "pitched": "Pitched roof",
+        "placeholder": "Select roof type",
+        "title": "Roof type"
+      },
+      "schemeAlt": "Building scheme",
+      "title": "MasterKupol"
+    },
+    "masterLight": {
+      "calculate": "Calculate",
+      "changeSelection": "Change selection",
+      "description": "Luminance calculator for LUMA luminaire selection",
+      "downloadPdf": "Download PDF",
+      "estimateDate": "Generated on",
+      "fields": {
+        "name": "Name",
+        "quantity": "Quantity",
+        "vendorCode": "Vendor code"
+      },
+      "form": {
+        "height": "Room height (H), m",
+        "length": "Room length (X), m",
+        "reflectionRatio": "Reflection ratio",
+        "roomCategory": "Safety Factor",
+        "roomType": "Room type",
+        "workAreaHeight": "Working surface height (Z), m",
+        "width": "Room width (Y), m"
+      },
+      "lampsDeclensions": "lamp,lamps,lamps",
+      "modal": {
+        "subtitle": "Please fill out the form to submit your application",
+        "successSubitle": "Our specialist will contact you shortly",
+        "successTitle": "Form submitted successfully",
+        "title": "Request for lighting calculation"
+      },
+      "projectComment": "Project comment",
+      "result": "Result",
+      "schemeAlt": "Room plan",
+      "selectLamp": "Select lamp",
+      "title": "MasterLight",
+      "tooltip": "The number on the left corresponds to the reflection coefficient of the ceiling, in the center – to the walls, to the right – to the floor. For office spaces with white walls and a light ceiling, a value of 805030 is recommended. The darker the room, the lower the reflection coefficient.",
+      "tooltipTitle": "Show hint"
+    },
+    "masterSticker": {
+      "addDevice": "Add device",
+      "addDeviceSelect": "Select device",
+      "addRail": "Add DIN rail",
+      "checkDataWarning": "Please, check device and clearance dimensions in the enclosure.",
+      "clearAll": "Clear all",
+      "config": {
+        "accent": "Highlight",
+        "color": "Colour",
+        "combine": "Group",
+        "controlObject": "Controlled object",
+        "description": "Description",
+        "group": "Group",
+        "heading": "Heading",
+        "icon": "Icon",
+        "noIcon": "Alt text",
+        "room": "Room"
+      },
+      "create": "Add",
+      "description": "Distribution enclosure labeling configurator",
+      "deviceLabel": "Name",
+      "deviceSymbol": "Symbol",
+      "downloadManual": "Download manual",
+      "edit": "Edit",
+      "filled": "Filled",
+      "groupColor": "Colour",
+      "groupLabel": "Name",
+      "groups": [
+        "No Group",
+        "Common",
+        "Priority",
+        "Rate",
+        "Uninterruptible",
+        "Backup",
+        "Lighting",
+        "Outlets",
+        "Kitchen",
+        "Wet Zones",
+        "Climate",
+        "Phase A",
+        "Phase B",
+        "Phase C",
+        "L1",
+        "L2",
+        "L3"
+      ],
+      "headerHeight": "Header height",
+      "icons": {
+        "coffeeMachine": "Coffee machine",
+        "conditioner": "Air conditioner",
+        "cookingPanel": "Stove",
+        "dishwasher": "Dishwasher",
+        "empty": "No icon",
+        "exhaust": "Cooker hood",
+        "fan": "Fan",
+        "fridge": "Fridge",
+        "iron": "Iron",
+        "kettle": "Kettle",
+        "lamp": "Backlighting",
+        "lighting": "Lighting",
+        "microwave": "Microwave",
+        "mixer": "Mixer",
+        "oven": "Oven",
+        "pc": "PC",
+        "powerSocket": "Power socket",
+        "router": "Router",
+        "shower": "Shower",
+        "sockets": "Socket strip",
+        "soundsystem": "Sound system",
+        "tv": "TV-set",
+        "usb": "USB socket",
+        "washingMachine": "Washing machine"
+      },
+      "labelHeight": "Labelling height",
+      "labelPosition": "Labelling",
+      "labelPositionBottom": "Under appliances",
+      "labelPositionTop": "Above appliances",
+      "module": {
+        "moveLeft": "Move left",
+        "moveRight": "Move right",
+        "remove": "Delete",
+        "widthDecrease": "Zoom out",
+        "widthIncrease": "Zoom in"
+      },
+      "moduleTypes": {
+        "automat": "Circuit breaker",
+        "contactor": "Contactor",
+        "default": "Device",
+        "fuse": "Fuse",
+        "lamp": "Indicator lamp",
+        "loadBreakSwitch": "Switch disconnector",
+        "meter": "Electricity meter",
+        "panelSocket": "Enclosure socket",
+        "rccb": "RCBO",
+        "rcd": "RCCB",
+        "relayImpulse": "Pulse relay",
+        "relayTime": "Time relay",
+        "relayTwilight": "Twilight relay",
+        "relayVoltage": "Voltage relay",
+        "reversibleSwitch": "Changeover switch",
+        "spacer": "Spacer",
+        "surgeProtection": "SPD",
+        "vaMeter": "Ampere voltmeter"
+      },
+      "modules": "modules",
+      "oversize": "Excess by",
+      "position1": "Position I",
+      "position1Short": "Pos. 1",
+      "position2": "Position II",
+      "position2Short": "Pos. 2",
+      "positionOff": "OFF position",
+      "positionOffShort": "OFF",
+      "printHeader": "Print header",
+      "rail": "Rail",
+      "railSize": "Size",
+      "save": "Save",
+      "steps": {
+        "1": "Add rails",
+        "2": "Add devices",
+        "3": "Print labels",
+        "step": "Step"
+      },
+      "title": "MasterSticker"
+    },
+    "masterTool": {
+      "areaDiameter": {
+        "linkText": "Determination of the cross-section of the wire by its diameter",
+        "title": "Determination of the cross-section of the wire by its diameter"
+      },
+      "areaLosses": {
+        "linkText": "Determination of the wire cross-section for a given voltage loss, load power and line length",
+        "title": "Determination of the wire cross-section for a given voltage loss, load power and line length"
+      },
+      "astra": {
+        "linkText": "Astra telecom cabinet configurator",
+        "title": "Astra telecom cabinet configurator"
+      },
+      "astraBox": {
+        "linkText": "Astra telecom cabinet configurator",
+        "title": "Astra telecom cabinet configurator"
+      },
+      "avrBox": {
+        "linkText": "Selection of a box for installing ATS",
+        "title": "Selection of a box for installing ATS"
+      },
+      "ballastResistor": {
+        "linkText": "Preload resistance calculation",
+        "title": "Preload resistance calculation"
+      },
+      "buildingsLoad": {
+        "linkText": "Calculation of loads of residential and public buildings",
+        "title": "Calculation of loads of residential and public buildings"
+      },
+      "buttonChoose": {
+        "linkText": "Selection of buttons and control devices",
+        "title": "Control device configurator"
+      },
+      "cabinetEquipment": "Selection of equipment for cabinets",
+      "cableTray": {
+        "linkText": "Selection of the tray cross-section and the need for fire extinguishing",
+        "title": "Selection of the tray cross-section and the need for fire extinguishing"
+      },
+      "cableTrayCapacity": {
+        "linkText": "Calculation of occupancy of cable channels",
+        "title": "Calculation of occupancy of cable channels"
+      },
+      "configurateFort": {
+        "linkText": "FORT cabinet configurator",
+        "title": "FORT cabinet configurator"
+      },
+      "configurateKupol": {
+        "linkText": "KUPOL LMS configurator",
+        "title": "KUPOL LMS configurator"
+      },
+      "configurateKupolFile": {
+        "linkText": "Configurator for flat roof lightning protection and object grounding",
+        "title": "Configurator for flat roof lightning protection and object grounding"
+      },
+      "configurateVru": {
+        "linkText": "Configurator for EKF floor casings up to 800 A",
+        "title": "Configurator for EKF floor casings up to 800 A"
+      },
+      "copperTires": {
+        "linkText": "Copper bus calculator",
+        "title": "Copper bus calculator"
+      },
+      "currentInCircuit": {
+        "linkText": "Calculation of the current in the circuit ",
+        "title": "Calculation of the current in the circuit "
+      },
+      "description": "The most necessary services for making work calculations and equipment selection",
+      "electricians": "For electricians",
+      "freqConverterEfficiency": {
+        "linkText": "Calculation of economic efficiency from the use of the frequency converter VECTOR EKF PROxima",
+        "title": "Calculation of economic efficiency from the use of the frequency converter VECTOR EKF PROxima"
+      },
+      "groundingResistance": {
+        "linkText": "Calculation of the resistance of the grounding system",
+        "title": "Calculation of the resistance of the grounding system"
+      },
+      "industrialEquipment": "Selection of industrial equipment",
+      "leakageCurrent": {
+        "linkText": "Leakage current calculation",
+        "title": "Leakage current calculation"
+      },
+      "lightningProtection": {
+        "linkText": "Calculation of the protective zone of the lightning rod",
+        "title": "Calculation of the protective zone of the lightning rod"
+      },
+      "microclimate": {
+        "linkText": "Configurator for microclimate inside the cabinet",
+        "title": "Configurator for microclimate inside the cabinet"
+      },
+      "motorCapacitor": {
+        "linkText": "Calculation of the capacitance of capacitors for three-phase electric motors",
+        "title": "Calculation of the capacitance of capacitors for three-phase electric motors"
+      },
+      "outdoorLocker": {
+        "linkText": "Outdoor cabinet calculator",
+        "title": "Outdoor cabinet calculator"
+      },
+      "selectivity": {
+        "linkText": "Circuit breaker selectivity calculator",
+        "title": "Circuit breaker selectivity calculator"
+      },
+      "sensitivity": {
+        "linkText": "Sensitivity check",
+        "title": "Sensitivity check"
+      },
+      "shortCircuit": {
+        "linkText": "Calculation of short-circuit currents",
+        "title": "Calculation of short-circuit currents"
+      },
+      "smartBox": {
+        "linkText": "ePRO 24 Cabinet Configurator – SmartBox",
+        "title": "SmartBox service"
+      },
+      "thermalStability": {
+        "linkText": "Thermal resistance of the cable",
+        "title": "Thermal resistance of the cable"
+      },
+      "title": "MasterTool",
+      "trivia": {
+        "linkText": "Configurator for AV Trivia EKF cabinets up to 4000 A",
+        "title": "Configurator for AV Trivia EKF cabinets up to 4000 A"
+      },
+      "uerm": {
+        "linkText": "Configurator for selecting the UERM cabinet",
+        "title": "Configurator for selecting the UERM cabinet"
+      },
+      "voltageDrop": {
+        "linkText": "Line voltage drop calculation",
+        "title": "Line voltage drop calculation"
+      },
+      "voltageStabilizer": {
+        "linkText": "Voltage stabilizer configurator",
+        "title": "Voltage stabilizer configurator"
+      }
+    },
+    "masterTray": {
+      "description": "The service for the selection of a tray route will allow you to select the necessary components with unloading into a detailed specification, an assessment of its cost and unloading a file for use in work.",
+      "title": "MasterTray"
+    },
+    "title": "Calculators",
+    "masterRoof": {
+      "addedToCart": "Products added to cart",
+      "calculate": "Calculate",
+      "cart": {
+        "fields": {
+          "name": "Name",
+          "image": "Photo",
+          "quantity": "Quantity",
+          "vendor": "Vendor code",
+          "unit": "Unit"
+        },
+        "title": "Calculation results"
+      },
+      "estimateDate": "Estimate from",
+      "description": "Description",
+      "initialData": {
+        "title": "Initial data",
+        "description": "Attention! Preliminary calculation.<br />For a more accurate calculation, send a roof plan and <span class=masterroof-questions-list>a completed questionnaire for heating</span> to <a href=\"mailto:primer@ekf.su\" class=\"text-reset text-hover-primary\">primer@ekf.su</a>"
+      },
+      "drainpipes": {
+        "length": "Total length of heated drainpipes, m",
+        "quantity": "Number of heated drainpipes, pcs.",
+        "diameter": "Drainpipe diameter over 150 mm",
+        "height": "Drainpipe height over 7 m"
+      },
+      "gutter": {
+        "length": "Total length of heated gutters, m"
+      },
+      "valley": {
+        "length": "Total length of heated valleys, m"
+      },
+      "schemeAlt": "Building scheme",
+      "title": "MasterRoof"
+    }
+  },
+  "cart": {
+    "acceptDataProcessing": "By clicking on the button I agree to <%processing of personal data%>",
+    "anchorLink": "View",
+    "availableToOrder": "Available to order",
+    "availableToOrderInfo": "Items from this section are not available, but you can pre-order them and we will contact you as soon as they go on sale",
+    "addToCart": "Add to Cart",
+    "basePrice": "Base price",
+    "buy": "Buy",
+    "buyFromDistributor": "Buy from a distributor",
+    "checkout": {
+      "distributorSelect": "Distributor selection",
+      "entity": "Entity",
+      "form": {
+        "comment": "Comment on the order",
+        "disclaimer": "By submitting this form, I agree to the User Agreement",
+        "distributorSelectAuto": "Submit your order to any available distributor in your area",
+        "distributorSelectManual": "Choose a distributor yourself",
+        "organization": "TIN / name of organization",
+        "pickupCity": "Order pick-up city"
+      },
+      "individual": "Individual",
+      "select": "Select"
+    },
+    "deleteConfirmation": {
+      "title": "You are about to delete the item from the solution set",
+      "cartText": "Items remaining in the cart will no longer be considered part of the bundle; their cost will be recalculated based on the minimum order quantity for each item.",
+      "solutionText": "Please note that without this item, the remaining items will not be considered part of the bundled solution, and upon adding it to the cart, their cost will be recalculated based on the minimum order quantity for each item.",
+      "question": "Delete anyway?"
+    },
+    "clearConfirmation": {
+      "title": "Delete positions?",
+      "question": "Do you really want to delete all items from the trash?",
+      "questionInStock": "Do you really want to remove available items from the shopping cart?",
+      "questionPreorder": "Do you really want to remove the items available under the order from the shopping cart?"
+    },
+    "fields": {
+      "count": "Count",
+      "name": "Name / Vendor code",
+      "nameOnly": "Name",
+      "photo": "Image",
+      "price": "Price",
+      "remove": "Remove",
+      "sum": "Sum",
+      "vendorCode": "Vendor code"
+    },
+    "form": {
+      "phone": "Your phone *",
+      "email": "Your email *"
+    },
+    "goToCart": "Go to Cart",
+    "inStock": "In stock",
+    "inStockInfo": "Items from this section are available and available for registration and purchase through EKF Market",
+    "isEmpty": "Cart is empty",
+    "order": "Order",
+    "orderConfirm": {
+      "message": "Your order has been created successfully. Thank you!",
+      "title": "Order created"
+    },
+    "orderFromDistributor": "Order from a distributor",
+    "orderOnline": "Order in the online store",
+    "outOfStock": {
+      "continueMessage": "Continue ordering without these items",
+      "message": "You can order these products from our distributors",
+      "title": "Items out of stock are available for order!",
+      "subtitle": "After purchasing items in stock, items to order will remain in your cart for placing an order."
+    },
+    "preorder": {
+      "info": "Some of the items in your cart are only available to order.",
+      "title": "Placing an order",
+      "success": "The order has been successfully completed",
+      "successMessage": "Thank you for your order! Our employees will contact you to clarify details."
+    },
+    "promoCode": {
+      "buttonText": "Add",
+      "placeholder": "Promocode"
+    },
+    "quickAdd": {
+      "buttonText": "Add",
+      "caption": "Add the following SKU to the table:",
+      "errorMessage": "Vendor code not found",
+      "errorTitle": "Could not add product",
+      "placeholder": "Vendor code",
+      "warningMessage": "Product with this vendor code is already in cart",
+      "warningTitle": "Could not add product"
+    },
+    "save": "Save specification",
+    "steps": {
+      "1": "Step 1. Checkout",
+      "2": "Step 2. Choosing a distributor"
+    },
+    "submitReport": "Submit report",
+    "title": "Cart",
+    "total": {
+      "pcs": "pcs.",
+      "products": "Products",
+      "cost": "Cost of goods",
+      "discount": "Your discount",
+      "sum": "Amount to pay"
+    }
+  },
+  "catalog": {
+    "addToCompare": "Add to comparison",
+    "addToFavorites": "Add to favorites",
+    "addedToCompare": "Product %s added to comparison",
+    "allCategoryProducts": "All category products",
+    "analog": "Analog",
+    "analogs": {
+      "replacement": {
+        "title": "Replacement analog",
+        "hint": "This product is an improved version of our time-tested bestseller, retaining all the favorite features and adding a number of innovative improvements."
+      },
+      "direct": {
+        "title": "Direct analog",
+        "hint": "Pin-to-pin analogue, in which the functional and electrical characteristics, connection dimensions and dimensions of the product are the same."
+      },
+      "functional": {
+        "title": "Similar product",
+        "hint": "Device with similar characteristics"
+      }
+    },
+    "catalog": "Catalog",
+    "comapre": "Compare",
+    "collapse": "Collapse",
+    "compareProductCount": "In comparison:",
+    "daysDeclensions": "day,days,days",
+    "downloadCategoryCatalog": "Download category catalog",
+    "downloadPresentation": "Download presentation",
+    "feedbackHint": {
+      "fromPrefix": "The question came from the page",
+      "message": "Our managers will be able to quickly help you by phone 8 800 777-65-27 or email 911.help@ekf.su or {{fill out the form}}",
+      "modalTitle": "Request for consultation",
+      "successMessage": "We will contact you shortly",
+      "successTitle": "Thank you, your application has been sent!",
+      "title": "Need help choosing?"
+    },
+    "from": "from",
+    "goToCatalog": "Go to catalog",
+    "goToCatalogProduction": "Go to catalog production",
+    "downloadCatalogPDF": "Download catalog (PDF)",
+    "goToCompare": "Go to comparison",
+    "goToProductPage": "Go to product page",
+    "goToProductLanding": "Go to product landing",
+    "goToSite": "Go to website",
+    "inCart": "In cart",
+    "isOutOfProduction": "Withdrawn from production",
+    "inOwnStock": "Product is in stock",
+    "inStockEkf": "Availability in EKF warehouses",
+    "inStock": "In stock",
+    "orderFromStocks": "Delivery through the EKF Market online store from",
+    "outOfStock": "Out of stock",
+    "productOutOfProduction": "Out of production",
+    "outOfProduction": "Out of production",
+    "outOfOwnStock": "Out of stock at EKF warehouses",
+    "ownStocks": {
+      "fields": {
+        "stock": "Stock",
+        "warehouse": "Warehouse",
+        "receipt": "Planned receipt"
+      },
+      "hint": "For detailed information on the availability and receipt of goods, please contact our managers by phone 8 800 333 88 15 or {{fill out the form}}",
+      "modalTitle": "Stock availability in EKF warehouses"
+    },
+    "pageTitle": "EKF product catalog",
+    "partnerStocks": {
+      "city": "Availability in your city",
+      "region": "Availability in your region",
+      "other": "Availability in RF",
+      "buttonText": "Partner stocks",
+      "checkAvailability": "Check availability",
+      "info": {
+        "city": "There are no distributors in your city",
+        "region": "There are no distributors in your region"
+      },
+      "fields": {
+        "contacts": "Contacts",
+        "partner": "Partner",
+        "restockDate": "Nearest restock date",
+        "stock": "Stock availability",
+        "stockShort": "Stock availability",
+        "warehouse": "Warehouse address"
+      },
+      "showAll": "Show all addresses",
+      "collapse": "Hide all addresses",
+      "modalTitle": "Stock availability of product with vendor code",
+      "pcs": "pcs.",
+      "priceDisclaimer": "Partner prices may differ from those declared on the site."
+    },
+    "price": {
+      "base": "Base price",
+      "ekfMarket": "Price at&nbsp;[EKF Market]",
+      "electrobaza": "Price at Electrobaza",
+      "final": "Your price",
+      "msrp": "MSRP",
+      "get": "Get price",
+      "onRequest": "Price on request",
+      "package": "Price per&nbsp;package"
+    },
+    "perPage": "Show by ",
+    "msrpLong": "Recommended retail price",
+    "package": "Price per package",
+    "removeFromCompare": "Remove from comparison",
+    "removedFromCompare": "Product %s removed from comparison",
+    "reviewsDeclensions": "review,reviews,reviews",
+    "pickUpAnalog": "Pick up an analog",
+    "findAnalog": "Find analog",
+    "noAnalogsTitle": "No analogues",
+    "noAnalogsMessage": "No analogues found for this product",
+    "showAll": "Show all",
+    "showMore": "Show more",
+    "status": "Status",
+    "stockByRequest": "By request",
+    "subcategories": "Subcategories",
+    "tabs": {
+      "assortment": {
+        "foundDeclensions": "Found,Found,Found",
+        "grid": "Grid view",
+        "list": "List view",
+        "productsDeclensions": "product,products,products",
+        "title": "Assortment"
+      },
+      "description": {
+        "title": "Description"
+      },
+      "documentation": {
+        "title": "Documentation",
+        "titleWithSoftware": "Documentation & software"
+      },
+      "education": {
+        "title": "Education"
+      },
+      "reviews": {
+        "addReview": "Add a review",
+        "addReviewCaption": "Please fill out the&nbsp;form to&nbsp;add a&nbsp;review",
+        "anonymous": "Anonymous",
+        "ekfReply": "EKF reply",
+        "rating1": "Horrible product",
+        "rating2": "Bad product",
+        "rating3": "Ok product",
+        "rating4": "Good product",
+        "rating5": "Great product",
+        "title": "Reviews"
+      },
+      "service": {
+        "title": "Service",
+        "text": "Authorized service center for&nbsp;UPS and&nbsp;stabilizers</br>&laquo;Development and&nbsp;support of information technologies&raquo;&nbsp;&mdash; sale, diagnostics, repair, maintenance"
+      },
+      "solutions": {
+        "title": "Solutions",
+        "text": "A wide range of solutions for various systems and objects from a single provider"
+      },
+      "specs": {
+        "advantage": "Advantage",
+        "advantages": "Advantages",
+        "anchorText": "All characteristics",
+        "application": "Application",
+        "dataSheet": "Data sheet",
+        "description": "Description",
+        "equipment": "Equipment",
+        "title": "Specification"
+      },
+      "logistic": {
+        "barcode": "Barcode",
+        "coefficient": "Amount in a package",
+        "depth": "Length, m",
+        "height": "Height, m",
+        "labels": {
+          "individual": "Individual",
+          "group": "Group",
+          "transport": "Transport"
+        },
+        "full_name": "Storage unit",
+        "title": "Logistics parameters",
+        "unitStorage": "Storage unit",
+        "volume": "Volume, m\u00B3",
+        "weight": "Gross weight, kg",
+        "width": "Width, m"
+      },
+      "video": {
+        "title": "Video"
+      }
+    },
+    "title": "Catalog",
+    "toCart": "Add to cart",
+    "toOrder": "To order",
+    "useful": "Suggested article",
+    "view360": "360° view",
+    "withdrawn": "Product is withdrawn",
+    "watchAnalogs": "Watch analogs"
+  },
+  "comments": {
+    "addComment": "Leave a comment",
+    "ekfResponse": "EKF response",
+    "rating": ["No rating"],
+    "title": "Comments"
+  },
+  "compare": {
+    "categories": {
+      "showAll": "Show all"
+    },
+    "clear": "Clear list",
+    "empty": "Nothing to compare.",
+    "nextProduct": "Next product",
+    "previousProduct": "Previous product",
+    "properties": {
+      "showAll": "Show all properties",
+      "showDifferent": "Show differences only"
+    },
+    "title": "Compare products"
+  },
+  "contacts": {
+    "title": "Contacts"
+  },
+  "copy": {
+    "error": "Error",
+    "success": "Text copied",
+    "tryAgain": "Try again",
+    "vendorCode": "Copy vendor code",
+    "vendorCodeSuccess": "Vendor code copied"
+  },
+  "distribution": {
+    "assembly": {
+      "checkboxText": "Assembly",
+      "title": "Assembly"
+    },
+    "branchDeclensions": "branch,branches,branches",
+    "buy": "Buy products",
+    "distributor": {
+      "checkboxText": "Distributors",
+      "title": "Distributor"
+    },
+    "diy": {
+      "checkboxText": "DIY",
+      "title": "DIY"
+    },
+    "foundBranchDeclensions": "branch,branches,branches",
+    "foundDeclensions": "Found,Found,Found",
+    "install": "Order installation",
+    "onlineStore": {
+      "checkboxText": "Online stores",
+      "title": "Online store"
+    },
+    "partners": {
+      "title": "Partners"
+    },
+    "pem": {
+      "checkboxText": "Panel equipment manufacturers",
+      "title": "Panel equipment manufacturer"
+    },
+    "project": "Order a project",
+    "retail": {
+      "checkboxText": "Retail",
+      "title": "Retail"
+    },
+    "sellerPointSelected": "Distributor seller point selected:",
+    "showAll": "Show all",
+    "showList": "Show list",
+    "showMap": "Show map",
+    "si": {
+      "checkboxText": "System integrators",
+      "title": "System integrator"
+    },
+    "title": "Distribution"
+  },
+  "ekfConnect": {
+    "title": "EKF Connect Home app",
+    "subtitle": "A new smart home mobile application from EKF with a user-friendly interface that combines various EKF smart devices, both installed in the apartment and installed in the panel. Works with Alice, allows you to receive notifications in Telegram.",
+    "feedback": "Mail for feedback and bug reports: iot@ekf.su",
+    "imgAlt": "Login page"
+  },
+  "error": {
+    "404": {
+      "metaDescription": "Error 404 – page not found",
+      "text": "This page that does not exist. <br /> You can go back or return to the home page",
+      "title": "Page not found"
+    },
+    "goHome": "Go back to home page",
+    "title": "Error",
+    "serverTryLater": "Server error, try again later",
+    "tryAgain": "An error occurred, please try again"
+  },
+  "errorReport": {
+    "form": {
+      "acceptAgreement": "User Agreement",
+      "acceptFeedback": "User agreement must be accepted",
+      "acceptTerms": "I agree with the terms of the",
+      "commentPlaceholder": "Enter your message",
+      "contactMe": "Contact me",
+      "emailPlaceholder": "Your e-mail",
+      "maxLengthFeedback": "Max value length is",
+      "namePlaceholder": "Your name",
+      "requiredFeedback": "This field is required",
+      "selectionPrefix": "Error in",
+      "typeFeedback": "Please select one of the options",
+      "typeImage": "Image",
+      "typeName": "Product name",
+      "typeOther": "Other",
+      "typePlaceholder": "Select error type",
+      "typePrice": "Product price",
+      "typeSpecification": "Specification"
+    },
+    "modalSubtitle": "Please fill out the form to send a message",
+    "modalTitle": "Fill in the error information",
+    "successSubtitle": "Your request has been sent successfully",
+    "successTitle": "Thank you!"
+  },
+  "faq": {
+    "title": "Get an answer to your question"
+  },
+  "feedback": {
+    "askQuestion": "Ask a question",
+    "estimateProject": "Estimate project",
+    "getFeedback": "Get feedback",
+    "modalSubtitle": "Please fill out the form to send a message",
+    "reportError": "Report error",
+    "reportProblem": "Report a problem",
+    "reportProblemSubtitle": "If you are encountering incorrect operation or other problems with EKF equipment, please describe your issue as detailed as possible and attach a photo or video if applicable.",
+    "reportProblemText": "Fill in the form, and our specialists will contact you.",
+    "requestCallback": "Request a call back",
+    "title": "Feedback"
+  },
+  "filters": {
+    "quickLinks": "Quick links",
+    "resetFilters": "Reset filters",
+    "title": "Filters",
+    "showResults": "Show results",
+    "subcategoryHint": "Select a subcategory for product filters"
+  },
+  "footer": {
+    "address": "Address: <span class=\"text-nowrap\">Moscow, Otradnaya st., 2B, building 9</span>",
+    "errorReport": "Found an&nbsp;error? Select it and&nbsp;press CTRL&nbsp;+ ENTER",
+    "goToOldSite": "Go to the old site",
+    "newSiteFeedback": "Questions and comments on the site work you can email to",
+    "insiderInformationList": "List of insider information"
+  },
+  "form": {
+    "acceptDataProcessing": "I agree to the <%processing of personal data%>",
+    "acceptRequiredFeedback": "Consent is required",
+    "browseText": "Attach file",
+    "checkSubscribe": "Stay informed",
+    "country": "Insert your country",
+    "city": "Insert your city",
+    "email": "Insert your e-mail",
+    "fetchError": "Could not fetch form data",
+    "fetchErrorTitle": "Error",
+    "fieldRequiredFeedback": "This field is required",
+    "fileNotAttached": "No file attached",
+    "firstName": "First Name",
+    "footerSubscribeLabel": "Subscribe to EKF news",
+    "fullName": "Insert your name",
+    "lastName": "Last Name",
+    "message": "Space for your meassge",
+    "phone": "Insert your phone number",
+    "questions": {
+      "distributor": "I want to become a distributor",
+      "error": "Report a website error",
+      "job": "I want to work at EKF",
+      "other": "Other questions",
+      "products": "Product inquiry",
+      "project": "Project calculation",
+      "review": "Leave a product review",
+      "supplier": "I want to become a supplier",
+      "training": "Product training"
+    },
+    "rating": "Your rating",
+    "selectDepartment": "Select department",
+    "selectProject": "Select project",
+    "selectQuestion": "Select question",
+    "selectSpecialization": "Your specialization",
+    "sidebarSubscribeLabel": "Subscribe to&nbsp;news and&nbsp;be the&nbsp;first to&nbsp;receive information about new EKF products",
+    "submit": "Submit",
+    "submitReport": "Submit report",
+    "submitError": "Could not submit form",
+    "submitErrorTitle": "Error",
+    "submitSuccess": "Form submitted successfully",
+    "submitSuccessTitle": "Success",
+    "subscribe": "Subscribe",
+    "subscribeToNews": "Subscribe to news",
+    "tooltipTitle": "Show hint"
+  },
+  "global": {
+    "analogs": "Analogues and similar products",
+    "accessories": "Accessories",
+    "analogsSelection": "Analogs selection",
+    "apply": "Apply",
+    "b2b": "B2B",
+    "back": "Back",
+    "buy": "Shop",
+    "buyProducts": "Buy products",
+    "buyOnMarketplaces": "Buy EKF products on marketplaces",
+    "cancel": "Cancel",
+    "captchaError": "Captcha error",
+    "category": "Category",
+    "checkAll": "Check all",
+    "clear": "Clear",
+    "clearCart": "Сlear сart",
+    "close": "Close",
+    "collapse": "Collapse",
+    "continue": "Continue",
+    "decrement": "Decrement",
+    "delete": "Delete",
+    "depth": "Depth",
+    "download": "Download",
+    "downloadCatalog": "Download catalog",
+    "downloadFullCatalog": "Download full catalog",
+    "downloadPdf": "Download as PDF",
+    "downloadPriceList": "Download price list",
+    "downloadFullPriceList": "Download full price list",
+    "downloadLightingPriceList": "Price list with photo – Lighting",
+    "downloadWithoutRegistration": "Download without registration",
+    "downloadXls": "Download XLS",
+    "downloadXlsx": "Download XLSX",
+    "education": "Education",
+    "ekfMarket": "EKF Market",
+    "electrobaza": "Electrobaza",
+    "error": "Error",
+    "for": "for",
+    "forward": "Forward",
+    "goToEtimCatalog": "Go to ETIM catalog",
+    "height": "Height",
+    "hide": "Hide",
+    "home": "Home",
+    "increment": "Increment",
+    "loadMore": "Load more",
+    "material": "Material",
+    "menu": "Menu",
+    "more": "More",
+    "multichannel": "multichannel",
+    "name": "Name",
+    "navigate": "Go to",
+    "newProduct": "New",
+    "news": "News",
+    "newsLink": "All news",
+    "no": "No",
+    "onlineStore": "Online Store",
+    "order": "Order products",
+    "pause": "Pause",
+    "play": "Play",
+    "popularProducts": "Popular products",
+    "price": "Price",
+    "print": "Print",
+    "readMore": "Read more",
+    "relatedProducts": "Related products",
+    "resetAll": "Reset all",
+    "reset": "Reset",
+    "save": "Save",
+    "search": "Search",
+    "searchSite": "Search site",
+    "select": "Select",
+    "selectAll": "Select all",
+    "selectRegion": "Select region",
+    "sendRequest": "",
+    "showAll": "Show all",
+    "showAllDistributors": "Show all",
+    "showAllProducts": "Show all products",
+    "signUp": "Sign up",
+    "siteTitle": "EKF — Manufacturer of reliable and affordable electrical products",
+    "stayInformed": "Stay informed",
+    "submitProject": "Submit a Project",
+    "success": "Success",
+    "tableEmpty": "Nothing to display",
+    "vendorCode": "Vendor code",
+    "video": "Video",
+    "warning": "Warning",
+    "width": "Width",
+    "yes": "Yes"
+  },
+  "help": {
+    "goToIms": "Login to IMS",
+    "hotline": "Hot Line",
+    "message": "We care about our partners and customers, so we always stay in touch with you.<br />\nGet advice from our specialists.",
+    "title": "Need help?"
+  },
+  "latestCards": {
+    "linkText": "Go to product catalog",
+    "title": "Stay tuned for new items"
+  },
+  "layout": {
+    "1": "Panel equipment manufacturer",
+    "2": "Designer",
+    "3": "Industry",
+    "4": "Civil Engineering",
+    "5": "Distributor",
+    "6": "Homeowner / Designer",
+    "7": "Retail",
+    "8": "Construction Company"
+  },
+  "legal": {
+    "dataConsent": "Consent to the processing of personal data",
+    "dataPolicy": "Policy for the protection and processing of personal data of the limited liability company \"Elektroresheniya\"",
+    "dataProtection": "Regulation on the procedure for storing and protecting personal data of users",
+    "disclosure": "Information disclosure",
+    "laborAssessment": "Labor assessment",
+    "promotionConsent": "Consent to receive promotional mailings",
+    "userAgreement": "User agreement"
+  },
+  "news": {
+    "category": "Category",
+    "empty": "Nothing here yet.",
+    "showAll": "Show all",
+    "subscribe": "Subscribe to news"
+  },
+  "numbers": {
+    "commodityGroups": "commodity groups",
+    "countries": "countries of presence",
+    "gost": "GOST R ISO",
+    "laboratory": "Own testing laboratory",
+    "logistics": "modern logistics centers",
+    "partners": "partners - design institutes",
+    "projects": "designed objects",
+    "projectsPerYear": "completed projects per year",
+    "skus": "SKUs",
+    "title": "Reliable supplier of electrical equipment and energy efficient solutions",
+    "years": "years on the market"
+  },
+  "pagination": {
+    "first": "Go to first page",
+    "goToPage": "Go to page",
+    "last": "Go to last page",
+    "next": "Go to next page",
+    "previous": "Go to previous page",
+    "title": "Pagination"
+  },
+  "professionals": {
+    "title": "Professionals"
+  },
+  "search": {
+    "empty": "Nothing found.",
+    "emptyCatalogLink": "product catalog",
+    "emptyWithQuery": "There is no results on your search request «{query}»",
+    "emptyWithQueryHint": "Please try changing the wording or check the {catalogLink}",
+    "emptyWithQueryAnalogs": "There is no analogs on your search request «{query}»",
+    "emptyWithQueryAnalogsHint": "Please contact the manager at {phone} or email {email} for assistance in selecting an analogue.",
+    "wrongLayoutHint": "Did you mean",
+    "products": {
+      "empty": "Products not found"
+    },
+    "documentation": {
+      "empty": "Documentation not found"
+    },
+    "news": {
+      "empty": "News not found"
+    }
+  },
+  "searchResults": {
+    "analogs": "Analogs",
+    "documentation": "Documentation",
+    "documentationFoundDeclensions": "Found,Found,Found",
+    "documentationItemDeclensions": "file,files,files",
+    "news": "News",
+    "newsFoundDeclensions": "Found,Found,Found",
+    "newsItemDeclensions": "news,news,news",
+    "products": "Products",
+    "results": "Search results for"
+  },
+  "searchHistory": {
+    "clear": "Clear",
+    "title": "History"
+  },
+  "solutions": {
+    "allSolutions": "All solutions",
+    "categories": {
+      "buttonText": "Show all solutions",
+      "description": "A wide range of solutions for various systems and objects from one supplier",
+      "title": "Solutions by EKF"
+    },
+    "commercialBuilding": "Commercial building",
+    "downloadAll": "Download all",
+    "downloadFile": {
+      "mindboxError": "MindBox error",
+      "return": "Back to site",
+      "subtitle": "Please provide your contact data to download solution. File will be sent to your e-mail.",
+      "successMessage": "In a couple of minutes, a letter with a file link will come to your mail. If you don't see it in your mailbox, check your spam folder.",
+      "successTitle": "Archive sent successfully",
+      "title": "Download archive"
+    },
+    "downloadLibraries": "Download files",
+    "filters": {
+      "application": "Scope of application",
+      "purpose": "Purpose"
+    },
+    "findYourSolution": "Find your solution",
+    "housingConstruction": "Housing construction",
+    "industry": "Industry",
+    "infrastructureFacilities": "Infrastructure facilities",
+    "linkText": "Go to solutions catalog",
+    "makeRequest": "Make a request",
+    "requestConsultation": "Request a consultation",
+    "tabs": {
+      "documentation": {
+        "documentation": "Documentation",
+        "software": "Software",
+        "title": "Documentation"
+      },
+      "faq": {
+        "title": "FAQ"
+      },
+      "products": {
+        "necessaryProducts": "Required hardware to implement the solution",
+        "title": "Products"
+      },
+      "schemes": {
+        "drawings": "Drawings",
+        "schemes": "Schemes",
+        "title": "Schemes"
+      },
+      "specs": {
+        "benefits": "Benefits",
+        "features": "Features",
+        "functions": "Main functions",
+        "modifications": "Modifications",
+        "title": "Description",
+        "specs": "Specifications"
+      },
+      "video": {
+        "title": "Video"
+      }
+    },
+    "title": "Solutions"
+  },
+  "sort": {
+    "abc": "Alphabetical",
+    "default": "Default",
+    "new": "Newest first",
+    "popular": "By popularity",
+    "priceAsc": "Price ascending",
+    "priceDesc": "Price descending",
+    "title": "Sort"
+  },
+  "support": {
+    "api": {
+      "description": "We have developed a software interface for setting up a smooth automatic exchange of information between our and your systems. With it, you can get information about articles, technical specifications, 3D models, CAD drawings, certificates, photo and video materials, and stock balances. Below is a detailed setup manual with a description of possible exchange methods and code examples.",
+      "title": "API for partners"
+    },
+    "bitrix": {
+      "description": "A convenient way to set up a constant exchange between the EKF database and the website of the online store running on the 1C-Bitrix: Site Management system. With it, you can set up automatic updating of the item and all attributes, as well as updating the balances in the EKF warehouses. Below is an instruction for working with the module.",
+      "title": "1C-Bitrix integration module"
+    },
+    "catalogs": "Catalogs",
+    "csv": {
+      "description": "You can download EKF product data as CSV file",
+      "title": "Export to CSV"
+    },
+    "developers": "For online stores and developers",
+    "documentation": {
+      "description": "Find passports, certificates, 3D models and catalogs for EKF products by search or by category",
+      "searchEmpty": "Documentation not found.",
+      "searchPlaceholder": "Enter product code or name",
+      "searchResults": "Search results for",
+      "searchSubmit": "Find documentation",
+      "title": "Documentation"
+    },
+    "epro": "Remote access controller",
+    "estimates": {
+      "description": "Costing services with embedded EKF equipment data",
+      "title": "Costing services"
+    },
+    "feedback": "Feedback",
+    "libraries": {
+      "description": "EKF element base for popular software",
+      "downloadLibraries": "Download libraries",
+      "title": "BIM & CAD libraries"
+    },
+    "marketing": "Marketing",
+    "posMaterials": {
+      "booklets": "Product brochures",
+      "books": "Books",
+      "catalogs": "Catalogs",
+      "description": "Printing promotional items for the decoration of retail outlets",
+      "descriptionShort": "Printing promotional items",
+      "downloadFile": "Download file",
+      "leaflets": "Leaflets",
+      "logo": "Logotype",
+      "title": "POS materials"
+    },
+    "presentations": {
+      "groups": {
+        "automation": "Automation and control",
+        "automationBoards": " Hinged boards with a mounting panel (automation)",
+        "busbar": "Busbar",
+        "buttons": "Buttons, push-button posts, switches, light-signaling fittings",
+        "cabinetAccessories": "Cabinet accessories",
+        "cableSupportSystems": "Cable support systems",
+        "contactors": "Contactors, starters, relays and accessories up to 1000A",
+        "distributionBoards": "Mounted and built-in distribution boards",
+        "electricityMeters": "Electricity meters",
+        "extension": "Extension cords, surge protectors, cartridges and accessories ",
+        "floorCabinets": "Metal floor cabinets",
+        "installation": "Products for electrical installation",
+        "lighting": "Lighting control, emergency lighting, door bells",
+        "lvcd": "Low voltage complete devices",
+        "measuringDevices": "Measuring devices",
+        "measuringTransformers": "Measuring transformers",
+        "powerConnectors": "Power connectors",
+        "tools": "Tools",
+        "trays": "Metal trays, STRUT-system",
+        "underfloorHeating": "Underfloor heating",
+        "wiringAccessories": "Wiring accessories"
+      },
+      "title": "Product presentations"
+    },
+    "retail": "Retail",
+    "software": {
+      "description": "Proprietary software developed by EKF",
+      "title": "EKF Software"
+    },
+    "title": "Support",
+    "videos": "Videos",
+    "warranty": {
+      "averes": "The best solution for industry and complex objects",
+      "basic": "Economical option for civil engineering",
+      "fields": {
+        "lifeTime": "Life time, years",
+        "name": "EKF name",
+        "servicePeriod": "Warranty period of service, years",
+        "storagePeriod": "Shelf life, years"
+      },
+      "proxima": "The best choice for residential and commercial construction and infrastructure facilities",
+      "title": "Warranty"
+    }
+  },
+  "units": {
+    "B": "B",
+    "EB": "EB",
+    "EiB": "EiB",
+    "GB": "GB",
+    "GiB": "GiB",
+    "KB": "KB",
+    "KiB": "KiB",
+    "MB": "MB",
+    "MiB": "MiB",
+    "PB": "PB",
+    "PiB": "PiB",
+    "TB": "TB",
+    "TiB": "TiB",
+    "YB": "YB",
+    "YiB": "YiB",
+    "ZB": "ZB",
+    "ZiB": "ZiB",
+    "m": "m",
+    "mm": "mm",
+    "pc": "PC"
+  }
+}

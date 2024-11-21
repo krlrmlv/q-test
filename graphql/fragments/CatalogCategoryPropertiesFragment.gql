@@ -1,0 +1,23 @@
+fragment CatalogCategoryPropertiesFragment on ekfgroup_catalog_categories {
+  properties(
+    where: { active: { _eq: true }, property_id: {_in: $propertiesIds} }
+    order_by: [{ sort_order: asc }]
+  ) {
+    name
+    property {
+      id
+      name
+      max_value_length
+    }
+    property_values(
+      order_by: { value: asc }
+      where: { value: { _is_null: false } }
+    ) {
+      property_value_id
+      value
+      unit {
+        name
+      }
+    }
+  }
+}

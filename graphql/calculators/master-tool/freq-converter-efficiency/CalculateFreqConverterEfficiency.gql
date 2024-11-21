@@ -1,0 +1,49 @@
+mutation CalculateFreqConverterEfficiency(
+  $cartId: String
+  $average_time: Int!
+  $engine_amperage: Float!
+  $engine_power: Float!
+  $locale: String!
+  $power_supply: String!
+  $scope_of_use_value: Float!
+) {
+  result: ekfgroup_mastertool_calculate_freq_converter_efficiency(
+    average_time: $average_time
+    engine_amperage: $engine_amperage
+    engine_power: $engine_power
+    power_supply: $power_supply
+    scope_of_use_value: $scope_of_use_value
+  ) {
+    average_efficiency
+    average_time
+    consumption_with_converter
+    consumption_without_converter
+    costs_with_converter
+    costs_without_converter
+    effectivity
+    kwt_price
+
+    product {
+      product: catalog_products(
+        where: { language: { code: { _eq: $locale } } }
+      ) {
+        carts(where: { cart_id: { _eq: $cartId } }) {
+          cart_id
+          quantity
+        }
+
+        coefficient
+        id
+        image
+        name
+        price
+        price_base
+        slug
+        vendor_code
+      }
+    }
+
+    product_id
+    vendor_code
+  }
+}

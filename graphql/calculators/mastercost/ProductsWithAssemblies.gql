@@ -1,0 +1,52 @@
+query ProductsWithAssemblies($vendorCodes: [String!]!, $locale: String) {
+  products: ekfgroup_catalog_products(
+    where: {
+      vendor_code: { _in: $vendorCodes }
+      language: { code: { _eq: $locale } }
+    }
+  ) {
+    id
+    parent_id
+    vendor_code
+    name
+    coefficient
+    price
+    price_base
+    slug
+    status
+    unit_transport_packaging {
+      coefficient
+    }
+
+    unit_storage {
+      id
+      name
+      coefficient
+    }
+    assemblies {
+      id
+      name
+      is_main
+      products {
+        product_id
+        assembly_id
+        qty
+        product {
+          id
+          parent_id
+          vendor_code
+          name
+          coefficient
+          price
+          price_base
+          slug
+          unit_storage {
+            id
+            name
+            coefficient
+          }
+        }
+      }
+    }
+  }
+}

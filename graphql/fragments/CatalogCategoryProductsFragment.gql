@@ -1,0 +1,32 @@
+#import "@/graphql/fragments/CatalogProductFragment"
+#import "@/graphql/fragments/CatalogProductCardPropertiesFragment"
+
+fragment CatalogCategoryProductsFragment on ekfgroup_catalog_categories {
+  products(
+    limit: $limit
+    offset: $offset
+    order_by: $sortBy
+    where: {
+      _and: [$where, { product: { price: { _gt: 0 }, active: { _eq: true } } }]
+    }
+  ) {
+    product {
+      ...CatalogProductFragment
+      ...CatalogProductCardPropertiesFragment
+
+      totalAvailableProperties: property_values_aggregate {
+        aggregate {
+          count
+        }
+      }
+
+      stocks_aggregate {
+        aggregate {
+          sum {
+            quantity
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+#import "@/graphql/fragments/NewsArticleFragment"
+query NewsArticle($locale: String!, $slug: String!) {
+  articles: ekfgroup_catalog_articles(
+    where: { language: { code: { _eq: $locale } }, slug: { _eq: $slug } }
+  ) {
+    ...NewsArticleFragment
+
+    category {
+      name
+      slug
+      parent {
+        slug
+      }
+    }
+  }
+}

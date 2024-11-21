@@ -1,0 +1,31 @@
+#import "@/graphql/fragments/FaqFragment"
+#import "@/graphql/fragments/SlideWithProductFragment"
+query HomeLayoutData(
+  $cartId: String
+  $locale: String!
+  $slides_filter: ekfgroup_catalog_slides_bool_exp = {}
+  $slug: String!
+) {
+  faqs: ekfgroup_catalog_faqs(
+    order_by: [{ sort_order: asc }, { id: asc }]
+    where: {
+      language: { code: { _eq: $locale } }
+      layout: { slug: { _eq: $slug } }
+    }
+  ) {
+    ...FaqFragment
+  }
+
+  slides: ekfgroup_catalog_slides(
+    order_by: { sort_order: asc }
+    where: {
+      _and: [
+        $slides_filter
+        { language: { code: { _eq: $locale } } }
+        { slider: { layout: { slug: { _eq: $slug } }, name: {} } }
+      ]
+    }
+  ) {
+    ...SlideWithProductFragment
+  }
+}

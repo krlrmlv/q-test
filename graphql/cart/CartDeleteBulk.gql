@@ -1,0 +1,8 @@
+mutation CartDeleteBulk(
+  $cartId: String!
+  $products: [EkfgroupCartClearProductsProductInput]
+) {
+  ekfgroup_cart_clear_products(cart_id: $cartId, products: $products) {
+    ok
+  }
+}

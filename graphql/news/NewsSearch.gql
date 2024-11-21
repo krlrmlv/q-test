@@ -1,0 +1,59 @@
+#import "@/graphql/fragments/NewsArticleFragment"
+query SearchNews(
+  $limit: Int!
+  $locale: String!
+  $offset: Int!
+  $orderBy: [ekfgroup_catalog_articles_order_by!]
+  $query: String!
+  $where: ekfgroup_catalog_articles_bool_exp = {}
+) {
+  news: ekfgroup_catalog_articles(
+    limit: $limit
+    offset: $offset
+    order_by: $orderBy
+    where: {
+      _and: [
+        $where
+        { language: { code: { _eq: $locale } } }
+        {
+          _or: [
+            { title: { _ilike: $query } }
+            { short_text: { _ilike: $query } }
+          ]
+        }
+      ]
+    }
+  ) {
+    ...NewsArticleFragment
+  }
+
+  categories: ekfgroup_catalog_article_categories(
+    order_by: { id: asc }
+    where: {
+      language: { code: { _eq: $locale } }
+      parent: { slug: { _eq: "news" } }
+    }
+  ) {
+    value: id
+    text: name
+  }
+
+  totalRows: ekfgroup_catalog_articles_aggregate(
+    where: {
+      _and: [
+        $where
+        { language: { code: { _eq: $locale } } }
+        {
+          _or: [
+            { title: { _ilike: $query } }
+            { short_text: { _ilike: $query } }
+          ]
+        }
+      ]
+    }
+  ) {
+    aggregate {
+      count
+    }
+  }
+}

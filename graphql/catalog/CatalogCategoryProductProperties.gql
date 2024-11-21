@@ -1,0 +1,27 @@
+#import "@/graphql/fragments/CatalogProductPropertyFragment"
+#import "@/graphql/fragments/CatalogProductPropertyUnitFragment"
+query CatalogCategoryProductProperties(
+  $locale: String!
+  $offset: Int = 8
+  $product_id: String!
+  $where: ekfgroup_catalog_product_property_value_bool_exp = {}
+) {
+  properties: ekfgroup_catalog_product_property_value(
+    offset: $offset
+    order_by: { sort_order: asc }
+    where: {
+      language: { code: { _eq: $locale } }
+      product_id: { _eq: $product_id }
+      property: { name: { _is_null: false } }
+      value: { _is_null: false }
+    }
+  ) {
+    value
+    property {
+      ...CatalogProductPropertyFragment
+    }
+    property_unit {
+      ...CatalogProductPropertyUnitFragment
+    }
+  }
+}

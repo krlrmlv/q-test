@@ -1,0 +1,43 @@
+#import "@/graphql/fragments/CatalogProductFullFragment"
+#import "@/graphql/fragments/SolutionsCategorySolutionFragment"
+
+query CatalogProduct(
+  $cartId: String
+  $locale: String
+  $slug: String
+  $additionalAnalogsWhere: ekfgroup_catalog_product_analogs_bool_exp = {}
+  $relatedAnalogsWhere: ekfgroup_catalog_product_analogs_bool_exp = {}
+  $replacementEkfAnalogWhere: ekfgroup_catalog_product_analogs_bool_exp = {}
+  $ekfAnalogsWhere: ekfgroup_catalog_product_analogs_bool_exp = {}
+) {
+  product: ekfgroup_catalog_products(
+    where: {
+      _and: [
+        { show_by_link: { _eq: true } }
+        { language: { code: { _eq: $locale } } }
+        {
+          _or: [
+            { slug: { _eq: $slug } }
+            { vendor_code: { _eq: $slug } }
+            { redirect_from: { _eq: $slug } }
+          ]
+        }
+      ]
+    }
+  ) {
+    ...CatalogProductFullFragment
+    stocks_aggregate {
+      aggregate {
+        sum {
+          quantity
+        }
+      }
+    }
+  }
+
+  productSolutions: ekfgroup_catalog_solutions_solutions(
+    where: { products: { product: { slug: { _eq: $slug } } } }
+  ) {
+    ...SolutionsCategorySolutionFragment
+  }
+}

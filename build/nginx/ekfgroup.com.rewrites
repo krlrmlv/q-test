@@ -1,0 +1,305 @@
+if ($match_redirect_to_ae = 1) {
+    return 302 https://ae.ekfgroup.com;
+}
+
+if ($match_redirect_to_ru = 2) {
+    return 302 https://global.ekfgroup.com;
+}
+
+if ($request_uri ~ "/ru/catalog/products/(.*)?tab=documentation&utm_source=(.*)&utm_medium=(.*)") {
+   set $slug $1;
+   set $utm_source $2;
+   set $utm_medium $3;
+  rewrite ^ https://ekfgroup.com/documents/$slug?is_group=true&utm_source=$utm_source&utm_medium=$utm_medium? permanent;
+}
+
+location ~^/o-kompanii/news/(.*) {
+ return 301 /about/news/$1 ;
+}
+location = /o-kompanii/news {
+  return 301 https://ekfgroup.com/about/news;
+}
+location = /catalog/rubilniki-modulnye           {
+  return 301 https://ekfgroup.com/catalog/rubilniki-modulnye-ms-do-63a-ekf-proxima;
+}
+rewrite	catalog/avtomaticheskie-vykljuchateli-modulnye-i-dop-ustrojstva	https://ekfgroup.com/catalog/modulnoe-oborudovanie;
+
+location /api/v1/ekf/catalog/products {
+proxy_pass https://api.ekfgroup.com/api/v1/ekf/catalog/products;
+}
+location /api/v1/ekf/stocks {
+proxy_pass https://api.ekfgroup.com/api/v1/ekf/stocks;
+}
+location /api/v1/ekf/catalog/prices {
+proxy_pass https://api.ekfgroup.com/api/v1/ekf/catalog/prices;
+}
+location /api/v1/ekf/catalog/files {
+proxy_pass https://api.ekfgroup.com/api/v1/ekf/catalog/files;
+}
+location /api/v1/ekf/catalog/product-groups {
+proxy_pass https://api.ekfgroup.com/api/v1/ekf/catalog/product-groups;
+}
+location /api/v1/ekf/catalog/product-analogs {
+proxy_pass https://api.ekfgroup.com/api/v1/ekf/catalog/product-analogs;
+}
+location /api/v1/ekf/catalog/properties {
+proxy_pass https://api.ekfgroup.com/api/v1/ekf/catalog/properties;
+}
+location /api/v1/partners/product-urls {
+proxy_pass https://api.ekfgroup.com/api/v1/partners/product-urls;
+}
+location /api/v1/partners/sales-branches {
+proxy_pass https://api.ekfgroup.com/api/v1/partners/sales-branches;
+}
+location /api/v1/partners/sales {
+proxy_pass https://api.ekfgroup.com/api/v1/partners/sales;
+}
+location /api/v1/partners/stocks {
+proxy_pass https://api.ekfgroup.com/api/v1/partners/stocks;
+}
+location /api/v1/ekf/warehouses {
+proxy_pass https://api.ekfgroup.com/api/v1/ekf/warehouses;
+}
+location /api/v1/etim/features {
+proxy_pass https://api.ekfgroup.com/api/v1/etim/features;
+}
+location /api/internal/form-request {
+proxy_pass https://api.ekfgroup.com/ekfgroup/form-request;
+}
+location /api/v1/ekf/receipts {
+proxy_pass https://api.ekfgroup.com/api/v1/ekf/receipts;
+}
+
+
+#28.08.2023
+
+location = /ru/catalog/aksessuary-dlya-trub {
+  return 301 https://ekfgroup.com/ru/catalog/aksessuary-dlya-trub-1;
+}
+location = /ru/catalog/bloki-pitaniya {
+  return 301 https://ekfgroup.com/ru/catalog/bloki-pitaniya-ac-dc;
+}
+location = /ru/catalog/boltorezy {
+  return 301 https://ekfgroup.com/ru/catalog/boltorezy-1;
+}
+location = /ru/catalog/rele-zashhity-dvigatelya-serii-mpr {
+  return 301 https://ekfgroup.com/ru/catalog/rele-zashhity-dvigatelya-serii-mpr-ekf;
+}
+location = /ru/catalog/rubilniki-modulnye-ms {
+  return 301 https://ekfgroup.com/ru/catalog/rubilniki-modulnye-ms-do-63a-ekf-proxima;
+}
+location = /ru/catalog/setevoj-instrument {
+  return 301 https://ekfgroup.com/ru/catalog/setevoj-instrument-1;
+}
+location = /ru/catalog/tajmery-elektronnye {
+  return 301 https://ekfgroup.com/ru/catalog/tajmery-elektronnye-ekf-proxima;
+}
+location = /ru/catalog/tre-pozicionnye-pereklyuchateli {
+  return 301 https://ekfgroup.com/ru/catalog/tre-pozicionnye-pereklyuchateli-ekf-basic;
+}
+location = /ru/catalog/bloki-pitaniya-v-korpuse {
+  return 301 https://ekfgroup.com/ru/catalog/bloki-pitaniya-v-korpuse-1;
+}
+
+#06.09.2023
+location = /ru/catalog/kontrollery-udalennogo-upravleniya-epro24 {
+  return 301 https://ekfgroup.com/ru/catalog/kontrollery-udalennogo-upravleniya-epro24-1;
+}
+location = /ru/catalog/kontrollery-udalennogo-upravleniya-epro24-home-1 {
+  return 301 https://ekfgroup.com/ru/catalog/kontrollery-udalennogo-upravleniya-epro24-home;
+}
+location = /ru/catalog/ustrojstva-udalennogo-upravleniya-epro24-1 {
+  return 301 https://ekfgroup.com/ru/catalog/ustrojstva-udalennogo-upravleniya-epro24;
+}
+location = /ru/catalog/umnye-udliniteli-1 {
+  return 301 https://ekfgroup.com/ru/catalog/umnye-udliniteli;
+}
+location = /ru/catalog/umnye-termoregulyatory-1 {
+  return 301 https://ekfgroup.com/ru/catalog/umnye-termoregulyatory;
+}
+location = /ru/catalog/umnye-rozetki-1 {
+  return 301 https://ekfgroup.com/ru/catalog/umnye-rozetki;
+}
+location = /ru/catalog/umnye-lampy-1 {
+  return 301 https://ekfgroup.com/ru/catalog/umnye-lampy;
+}
+
+# REQ0024112
+rewrite /ru/hrpage https://ekfgroup.com/ru/about/career;
+
+
+#15.08.2023
+rewrite	/catalog/product/kontakt-bokovoj-kbe-11-9-70a-ekf-averes https://ekfgroup.com/catalog/products/kontakt-bokovoj-kbe-11-9-70a-ekf-averes;
+rewrite	/catalog/product/kontakt-signalnyj-av-sd-ekf-averes https://ekfgroup.com/catalog/products/kontakt-signalnyj-av-sd-ekf-averes;
+rewrite	/catalog/product/murmansk-vyklyuchatel-1--klavishnyj-10a-ip54-seryj-ekf https://ekfgroup.com/catalog/products/murmansk-vyklyuchatel-1--klavishnyj-10a-ip54-seryj-ekf;
+rewrite	/catalog/product/nabor-dielektricheskogo-instrumenta-nii-03-ekf-master https://ekfgroup.com/catalog/products/nabor-dielektricheskogo-instrumenta-nii-03-ekf-master;
+rewrite	/catalog/product/plavkaya-vstavka-cilindricheskaya-pvc-10-38-4a-ekf-proxima https://ekfgroup.com/catalog/products/plavkaya-vstavka-cilindricheskaya-pvc-10-38-4a-ekf-proxima;
+rewrite	/catalog/product/puskatel-elektromagnitnyj-serii-pml-1160dm-18a-400v-ekf-basic https://ekfgroup.com/catalog/products/puskatel-elektromagnitnyj-serii-pml-1160dm-18a-400v-ekf-basic;
+rewrite	/catalog/product/ramka-support-na-2-modulya-1-post-dlya-parapetnogo-kabelnogo-kanala-ekf-c-line https://ekfgroup.com/catalog/products/ramka-support-na-2-modulya-1-post-dlya-parapetnogo-kabelnogo-kanala-ekf-c-line;
+rewrite	/catalog/product/strut-stojka-dvojnaya-41-41-1200mm-ekf https://ekfgroup.com/catalog/products/strut-stojka-dvojnaya-41-21-1200mm-hdz-ekf;
+rewrite	/taymer-elektronnyy-te-15-ekf-proxima https://ekfgroup.com/catalog/products/tajmer-elektronnyj-te-15-ekf-proxima;
+
+#19.08.2023
+
+rewrite 	/ru/catalog/dopolnitelnoe-oborudovanie-1	https://ekfgroup.com/ru/catalog/dopolnitelnoe-oborudovanie;
+rewrite 	/ru/catalog/kontrollery-avr-1	https://ekfgroup.com/ru/catalog/kontrollery-avr;
+rewrite 	/ru/catalog/linejno-interaktivnye-ibp-e-power-1	https://ekfgroup.com/ru/catalog/linejno-interaktivnye-ibp-e-power;
+rewrite 	/ru/catalog/rele-temperatury-1	https://ekfgroup.com/ru/catalog/rele-temperatury;
+rewrite 	/ru/catalog/rele-urovnya-1	https://ekfgroup.com/ru/catalog/rele-urovnya;
+#rewrite 	/ru/catalog/umnye-lampy-1	https://ekfgroup.com/ru/catalog/umnye-lampy;
+rewrite 	/ru/catalog/vyklyuchateli-nagruzki-modulnye-1	https://ekfgroup.com/ru/catalog/vyklyuchateli-nagruzki-modulnye;
+rewrite 	/ru/catalog/dopolnitelnoe-oborudovanie-2	https://ekfgroup.com/ru/catalog/dopolnitelnoe-oborudovanie;
+rewrite 	/ru/catalog/kontrollery-avr-2	https://ekfgroup.com/ru/catalog/kontrollery-avr;
+rewrite 	/ru/catalog/linejno-interaktivnye-ibp-e-power-2	https://ekfgroup.com/ru/catalog/linejno-interaktivnye-ibp-e-power;
+rewrite 	/ru/catalog/rele-temperatury-2	https://ekfgroup.com/ru/catalog/rele-temperatury;
+rewrite 	/ru/catalog/rele-urovnya-2	https://ekfgroup.com/ru/catalog/rele-urovnya;
+rewrite 	/ru/catalog/umnye-lampy-2	https://ekfgroup.com/ru/catalog/umnye-lampy;
+rewrite 	/ru/catalog/vyklyuchateli-nagruzki-modulnye-2	https://ekfgroup.com/ru/catalog/vyklyuchateli-nagruzki-modulnye;
+rewrite 	/ru/catalog/aksessuary-dlya-montazhny-korobok-1	https://ekfgroup.com/ru/catalog/aksessuary-dlya-montazhny-korobok;
+rewrite 	/ru/catalog/aksessuary-i-prochie-komplektuyushhie-1	https://ekfgroup.com/ru/catalog/aksessuary-i-prochie-komplektuyushhie;
+rewrite 	/ru/catalog/bloki-pitaniya-na-din-rejku-1	https://ekfgroup.com/ru/catalog/bloki-pitaniya-na-din-rejku;
+rewrite 	/ru/catalog/dopolnitelnye-ustrojstva-1	https://ekfgroup.com/ru/catalog/dopolnitelnye-ustrojstva;
+rewrite 	/ru/catalog/ems-filtry-1	https://ekfgroup.com/ru/catalog/ems-filtry;
+rewrite 	/ru/catalog/fotorele-1	https://ekfgroup.com/ru/catalog/fotorele;
+rewrite 	/ru/catalog/gilzy-boltovye-alyuminievye-1	https://ekfgroup.com/ru/catalog/gilzy-boltovye-alyuminievye;
+rewrite 	/ru/catalog/ibp-dvojnogo-preobrazovaniya-3-faznye-e-power-sw900-1	https://ekfgroup.com/ru/catalog/ibp-dvojnogo-preobrazovaniya-3-faznye-e-power-sw900;
+rewrite 	/ru/catalog/ibp-dvojnogo-preobrazovaniya-3--faznye-e-power-sw900pro-g5-do-30-kvt-1	https://ekfgroup.com/ru/catalog/ibp-dvojnogo-preobrazovaniya-3--faznye-e-power-sw900pro-g5-do-30-kvt;
+rewrite 	/ru/catalog/ibp-dvojnogo-preobrazovaniya-odnofaznye-6-20-kva-e-power-sw-1	https://ekfgroup.com/ru/catalog/ibp-dvojnogo-preobrazovaniya-odnofaznye-6-20-kva-e-power-sw;
+rewrite 	/ru/catalog/ibp-dvojnogo-preobrazovaniya-odnofaznye-do-3kva-e-power-sw900-1	https://ekfgroup.com/ru/catalog/ibp-dvojnogo-preobrazovaniya-odnofaznye-do-3kva-e-power-sw900;
+rewrite 	/ru/catalog/ibp-dvojnogo-preobrazovaniya-odnofaznye-e-power-10-20-kvt-3-v-1-1	https://ekfgroup.com/ru/catalog/ibp-dvojnogo-preobrazovaniya-odnofaznye-e-power-10-20-kvt-3-v-1;
+rewrite 	/ru/catalog/ibp-dvojnogo-preobrazovaniya-odnofaznye-e-power-6-20-kvt-3-v-1	https://ekfgroup.com/ru/catalog/ibp-dvojnogo-preobrazovaniya-odnofaznye-e-power-6-20-kvt;
+rewrite 	/ru/catalog/ibp-e-power-sw800-tr-dvojnogo-preobrazovaniya-s-razvyazyvayushhim-vy-odnym-transformatorom-1	https://ekfgroup.com/ru/catalog/ibp-e-power-sw800-tr-dvojnogo-preobrazovaniya-s-razvyazyvayushhim-vy-odnym-transformatorom;
+rewrite 	/ru/catalog/ibp-e-power-sw900g4-rt--31-dvojnogo-preobrazovaniya-odnofaznye-3-v-1-v-universalnom-korpuse-rt-1	https://ekfgroup.com/ru/catalog/ibp-e-power-sw900g4-rt--31-dvojnogo-preobrazovaniya-odnofaznye-3-v-1-v-universalnom-korpuse-rt;
+rewrite 	/ru/catalog/ibp-e-power-sw900g4-rt-dvojnogo-preobrazovaniya-odnofaznye-6-10kvt-napolnye-1	https://ekfgroup.com/ru/catalog/ibp-e-power-sw900g4-rt-dvojnogo-preobrazovaniya-odnofaznye-6-10kvt-napolnye;
+rewrite 	/ru/catalog/ibp-e-power-sw900g4-t-31-dvojnogo-preobrazovaniya-odnofaznye-3-v-1-napolnye-1	https://ekfgroup.com/ru/catalog/ibp-e-power-sw900g4-t-31-dvojnogo-preobrazovaniya-odnofaznye-3-v-1-napolnye;
+rewrite 	/ru/catalog/ibp-e-power-sw900g4-t-dvojnogo-preobrazovaniya-odnofaznye-6-10-kvt-v-universalnom-korpuse-rt-1	https://ekfgroup.com/ru/catalog/ibp-e-power-sw900g4-t-dvojnogo-preobrazovaniya-odnofaznye-6-10-kvt-v-universalnom-korpuse-rt;
+rewrite 	/ru/catalog/ibp-e-power-sw900pro-rt-dvojnogo-preobrazovaniya-odnofaznye-do-3-kvt-v-universalnom-korpuse-rt-1	https://ekfgroup.com/ru/catalog/ibp-e-power-sw900pro-rt-dvojnogo-preobrazovaniya-odnofaznye-do-3-kvt-v-universalnom-korpuse-rt;
+rewrite 	/ru/catalog/ibp-e-power-sw900pro-t-dvojnogo-preobrazovaniya-odnofaznye-do-3-kvt-napolnye-1	https://ekfgroup.com/ru/catalog/ibp-e-power-sw900pro-t-dvojnogo-preobrazovaniya-odnofaznye-do-3-kvt-napolnye;
+rewrite 	/ru/catalog/ibp-postoyannogo-toka-e-power-1	https://ekfgroup.com/ru/catalog/ibp-postoyannogo-toka-e-power;
+rewrite 	/ru/catalog/impulsnye-rele-1	https://ekfgroup.com/ru/catalog/impulsnye-rele;
+rewrite 	/ru/catalog/instrument-i-prisposobleniya-dlya-motazha-sip-1	https://ekfgroup.com/ru/catalog/instrument-i-prisposobleniya-dlya-motazha-sip;
+rewrite 	/ru/catalog/istochniki-besperebojnogo-pitaniya-e-power-1	https://ekfgroup.com/ru/catalog/istochniki-besperebojnogo-pitaniya-e-power;
+rewrite 	/ru/catalog/koncevye-vyklyuchateli-tz-1	https://ekfgroup.com/ru/catalog/koncevye-vyklyuchateli-tz;
+rewrite 	/ru/catalog/koncevye-vyklyuchateli-wl-1	https://ekfgroup.com/ru/catalog/koncevye-vyklyuchateli-wl;
+#rewrite 	/ru/catalog/kontrollery-udalennogo-upravleniya-epro24	https://ekfgroup.com/ru/catalog/kontrollery-udalennogo-upravleniya-epro24-1;
+rewrite 	/ru/catalog/krepezhnye-elementy-1	https://ekfgroup.com/ru/catalog/krepezhnye-elementy;
+rewrite 	/ru/catalog/linejno-interaktivnye-ibp-chistyj-sinus-e-power-psw-1	https://ekfgroup.com/ru/catalog/linejno-interaktivnye-ibp-chistyj-sinus-e-power-psw;
+rewrite 	/ru/catalog/linejno-interaktivnye-ibp-e-power-psw600-1	https://ekfgroup.com/ru/catalog/linejno-interaktivnye-ibp-e-power-psw600;
+rewrite 	/ru/catalog/linejno-interaktivnye-ibp-e-power-psw-h-1	https://ekfgroup.com/ru/catalog/linejno-interaktivnye-ibp-e-power-psw-h;
+rewrite 	/ru/catalog/montazhnye-korobki-dlya-poly-sten-1	https://ekfgroup.com/ru/catalog/montazhnye-korobki-dlya-poly-sten;
+rewrite 	/ru/catalog/montazhnye-korobki-dlya-tverdy-sten-1	https://ekfgroup.com/ru/catalog/montazhnye-korobki-dlya-tverdy-sten;
+rewrite 	/ru/catalog/nakonechniki-boltovye-alyuminievye-1	https://ekfgroup.com/ru/catalog/nakonechniki-boltovye-alyuminievye;
+rewrite 	/ru/catalog/nozhnicy-sektornye-me-anicheskie-1	https://ekfgroup.com/ru/catalog/nozhnicy-sektornye-me-anicheskie;
+rewrite 	/ru/catalog/ognestojkie-korobki-i-prinadlezhnosti-1	https://ekfgroup.com/ru/catalog/ognestojkie-korobki-i-prinadlezhnosti;
+rewrite 	/ru/catalog/ogranichiteli-moshhnosti-1	https://ekfgroup.com/ru/catalog/ogranichiteli-moshhnosti;
+rewrite 	/ru/catalog/otvetviteli-prokalyvayushhie-1	https://ekfgroup.com/ru/catalog/otvetviteli-prokalyvayushhie;
+rewrite 	/ru/catalog/predo-raniteli-razediniteli-dlya-pvc-1	https://ekfgroup.com/ru/catalog/predo-raniteli-razediniteli-dlya-pvc;
+rewrite 	/ru/catalog/pressy-gidravlicheskie-1	https://ekfgroup.com/ru/catalog/pressy-gidravlicheskie;
+rewrite 	/ru/catalog/promezhutochnye-rele-1	https://ekfgroup.com/ru/catalog/promezhutochnye-rele;
+rewrite 	/ru/catalog/promyshlennye-kommutatory-tsx-1	https://ekfgroup.com/ru/catalog/promyshlennye-kommutatory-tsx;
+rewrite 	/ru/catalog/protyazhki-kabelnye-1	https://ekfgroup.com/ru/catalog/protyazhki-kabelnye;
+rewrite 	/ru/catalog/rele-kontrolya-faz-1	https://ekfgroup.com/ru/catalog/rele-kontrolya-faz;
+rewrite 	/ru/catalog/rele-napryazheniya-1	https://ekfgroup.com/ru/catalog/rele-napryazheniya;
+rewrite 	/ru/catalog/rele-tverdotelnye-25-80-a	https://ekfgroup.com/ru/catalog/rele-tverdotelnye;
+rewrite 	/ru/catalog/rele-vremeni-1	https://ekfgroup.com/ru/catalog/rele-vremeni;
+rewrite 	/ru/catalog/rele-vybora-faz-1	https://ekfgroup.com/ru/catalog/rele-vybora-faz;
+rewrite 	/ru/catalog/salniki-germetichnye-pg-ip54-serye-1	https://ekfgroup.com/ru/catalog/salniki-germetichnye-pg-ip54-serye;
+rewrite 	/ru/catalog/stabilizatory-1	https://ekfgroup.com/ru/catalog/stabilizatory;
+#rewrite 	/ru/catalog/umnye-rozetki-1	https://ekfgroup.com/ru/catalog/umnye-rozetki;
+#rewrite 	/ru/catalog/umnye-termoregulyatory-1	https://ekfgroup.com/ru/catalog/umnye-termoregulyatory;
+#rewrite 	/ru/catalog/umnye-udliniteli-1	https://ekfgroup.com/ru/catalog/umnye-udliniteli;
+
+
+#23.08.2023
+
+#rewrite	/ru/catalog/aksessuary-dlya-trub	https://ekfgroup.com/ru/catalog/aksessuary-dlya-trub-1;
+#rewrite	/ru/catalog/bloki-pitaniya	https://ekfgroup.com/ru/catalog/bloki-pitaniya-ac-dc;
+#rewrite	/ru/catalog/bloki-pitaniya-v-korpuse	https://ekfgroup.com/ru/catalog/bloki-pitaniya-v-korpuse-1;
+#rewrite	/ru/catalog/boltorezy	https://ekfgroup.com/ru/catalog/boltorezy-1;
+rewrite	/ru/catalog/chastotnye-preobrazovateli-i-aksessuary	https://ekfgroup.com/ru/catalog/preobrazovateli-chastoty;
+rewrite	/ru/catalog/istochniki-besperebojnogo-pitaniya-ibp-1	https://ekfgroup.com/ru/catalog/stabilizatory-napryazheniya-istochniki-besperebojnogo-pitaniya;
+rewrite	/ru/catalog/montazhnye-i-raspaechnye-korobki	https://ekfgroup.com/ru/catalog/montazhnye-i-raspayachnye-korobki;
+rewrite	/ru/catalog/preobrazovateli-chastoty-ekf-basic	https://ekfgroup.com/ru/catalog/preobrazovateli-chastoty-vector-80;
+rewrite	/ru/catalog/preobrazovateli-chastoty-ekf-proxima	https://ekfgroup.com/ru/catalog/preobrazovateli-chastoty-vector-100;
+rewrite	/ru/catalog/raspaechnye-korobki-naruzhnye	https://ekfgroup.com/ru/catalog/raspayachnye-korobki-naruzhnye;
+rewrite	/ru/catalog/raspaechnye-korobki-pod-derevo-naruzhnye	https://ekfgroup.com/ru/catalog/raspayachnye-korobki-pod-derevo-naruzhnye;
+#rewrite	/ru/catalog/rele-zashhity-dvigatelya-serii-mpr	https://ekfgroup.com/ru/catalog/rele-zashhity-dvigatelya-serii-mpr-ekf;
+#rewrite	/ru/catalog/rubilniki-modulnye-ms	https://ekfgroup.com/ru/catalog/rubilniki-modulnye-ms-do-63a-ekf-proxima;
+#rewrite	/ru/catalog/setevoj-instrument	https://ekfgroup.com/ru/catalog/setevoj-instrument-1;
+#rewrite	/ru/catalog/tajmery-elektronnye	https://ekfgroup.com/ru/catalog/tajmery-elektronnye-ekf-proxima;
+#rewrite	/ru/catalog/tre-pozicionnye-pereklyuchateli	https://ekfgroup.com/ru/catalog/tre-pozicionnye-pereklyuchateli-ekf-basic;
+
+#29.08.2023
+
+rewrite	/podderzhka/technical	https://ekfgroup.com/ru/support/feedback;
+rewrite	/podderzka/3d-modeli https://ekfgroup.com/support/libraries;
+
+#31.08.2023
+
+rewrite	/ru/catalog/programmiruemye-rele-pro-relay	https://ekfgroup.com/ru/catalog/programmiruemye-ustrojstva-plc-hmi;
+
+
+#08.12.2023
+
+rewrite	/ru/catalog/moduli-vvoda-vyvoda-pro-logic-s-interfejsom-rs-485-1	https://ekfgroup.com/ru/catalog/moduli-vvoda-vyvoda-pro-logic-s-interfejsom-rs-485;
+rewrite	/ru/catalog/moduli-vvoda-vyvoda-pro-logic-s-interfejsami-ethernet-i-rs-485-1	https://ekfgroup.com/ru/catalog/moduli-vvoda-vyvoda-pro-logic-s-interfejsami-ethernet-i-rs-485;
+
+#18.12.2023
+
+rewrite	/ru/catalog/korziny-dlya-kondicionerov	https://ekfgroup.com/ru/catalog/ustrojstva-etazhnye-i-aksessuary-dlya-mnogokvartirnogo-doma;
+
+#09.01.2024
+
+rewrite	/ru/catalog/korpusa-s-montazhnoj-panelyu-shhmp-ip31-basic   https://ekfgroup.com/ru/catalog/korpusa-s-montazhnoj-panelyu-shhmp-ip31-ip54;
+rewrite	/ru/catalog/korpusa-s-montazhnoj-panelyu-shhmpg-ip54-basic   https://ekfgroup.com/ru/catalog/korpusa-s-montazhnoj-panelyu-shhmp-ip31-ip54;
+rewrite	/ru/catalog/korpusa-s-montazhnoj-panelyu-shhmpg-ip65   https://ekfgroup.com/ru/catalog/korpusa-s-montazhnoj-panelyu-shhmp-ip31-ip54;
+
+#05.02.2024
+
+rewrite /ru/catalog/shhity-raspredelitelnye-navesnye-i-vstraivaemye	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shhity-raspredelitelnye-plastikovye-shhrn-p-shhrv-p-ip21-ip41	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shhity-raspredelitelnye-plastikovye-v-prom-upakovke-ip41	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/slabotochnye-shhity-crosser	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shhity-raspredelitelnye-plastikovye-profibox-ip41	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shhity-s-montazhnoj-panelju-avtomatizacii-navesnye	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shhity-etazhnye-ekf-basic-usilennye	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shkafy-napolnye-metallicheskie	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+
+#06.02.2024
+
+rewrite /ru/catalog/navesnye-so-slabotochnym-otsekom	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/korpusa-uerm-ekf-basic-bez-zadnej-stenki	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+
+
+#07.02.2024
+
+rewrite /ru/catalog/korpusa-s-montazhnoj-panelyu-shhmpg-ip54-ral-3001-proxima-1 	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/navesnye-so-slabotochnym-otsekom	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/korpusa-uerm-ekf-basic-bez-zadnej-stenki	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/nestandartnye-shhe-i-komplektuyushhie-po-zaprosu-zakazchika-1	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shhmp-napolnye-ip54	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+
+#08.02.2024
+
+rewrite /ru/catalog/shkafy-antivandalnye-stekloplastikovye-shhmp-ip65	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shhmp-plastikovye-ip65	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+
+#11.02.2024
+
+rewrite /ru/catalog/shhity-raspredelitelnye-navesnye-plastikovye-unix-ip40	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shhity-s-montazhnoj-panelyu-avtomatizacii-navesnye	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+rewrite /ru/catalog/shhity-uchetno-raspredelitelnye-plastikovye-germetichnye-shhu-p-shhurn-p-ip54-ip55	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+
+#28.02.2024
+
+rewrite /ru/catalog/shkafy-nastennye-teracom-pro  https://ekfgroup.com/ru/catalog/shkafy-stojki-korpusa-dlya-it-oborudovaniya;
+rewrite /ru/catalog/rozetki-i-adaptery-informacionnye  https://ekfgroup.com/ru/catalog/informacionnye-rozetki-i-adaptery;
+rewrite /ru/catalog/rozetochnye-ramki-vstavki-korpusa  https://ekfgroup.com/ru/catalog/informacionnye-rozetki-i-adaptery;
+
+#13.03.2024 - hide lines from 11.02.2024
+
+#rewrite /ru/catalog/shhity-raspredelitelnye-plastikovye-germetichnye-shhrn-pg-ip65	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+#rewrite /ru/catalog/shhity-raspredelitelnye-plastikovye-nova-ip40	https://ekfgroup.com/ru/catalog/shhity-korpusa-i-komplektuyushhie;
+
+# REQ0025462
+rewrite /ru/c-line https://c-line.ekfgroup.com;
